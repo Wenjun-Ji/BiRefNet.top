@@ -1,12 +1,12 @@
-# [RestorePhotos.io](https://restorephotos.io/)
+# DIS
 
-This project restores old face photos using AI. Watch the [4 minute explainer video](https://twitter.com/nutlope/status/1614794731396931585) to see how I built this or see the [15 second demo](https://twitter.com/nutlope/status/1612488923716136962).
-
-[![Face Photo Restorer](./public/screenshot.png)](https://restorephotos.io/)
+这里我还没想好起什么名字，大概其就是DIS的体验网站
+This project ... 
 
 ## How it works
 
-It uses an ML model from the Applied Research Center called [GFPGAN](https://github.com/TencentARC/GFPGAN) on [Replicate](https://replicate.com/) to restore face photos. This application gives you the ability to upload any photo, which will send it through this ML Model using a Next.js API route, and return your restored photo.
+It uses an DIS model called [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) on [Replicate](https://replicate.com/) to segment images with high accuracy. This application gives you the ability to upload any photo, which will send it through this ML Model using a Next.js API route, and return your restored photo.
+
 
 ## Running Locally
 
@@ -55,3 +55,4 @@ This example is powered by the following 3 services:
 - [Replicate](https://replicate.com) (AI API)
 - [Upload](https://upload.io) (storage)
 - [Vercel](https://vercel.com) (hosting, serverless functions, analytics)
+- [RestorePhotos.io](https://restorephotos.io/)(style template)
