@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import CallToActionL from "../components/CallToActionL";
+import CallToActionR from "../components/CallToActionR";
 import SquigglyLines from "../components/SquigglyLines";
 import { Testimonials } from "../components/Testimonials";
 
@@ -83,6 +85,12 @@ const Home: NextPage = () => {
         </div>
       </main>
       <Testimonials />
+      <CallToActionL />
+      <CallToActionR />
+      <CallToActionL />
+
+
+
       <Footer />
     </div>
   );
