@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import CallToActionL from "../components/CallToActionL";
+import CallToActionR from "../components/CallToActionR";
 import SquigglyLines from "../components/SquigglyLines";
 import { Testimonials } from "../components/Testimonials";
 
@@ -24,7 +26,7 @@ const Home: NextPage = () => {
         >
           Used by over <span className="font-semibold">200,000</span> happy
           users
-        </a>
+        </a>		
         <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-slate-900 sm:text-7xl">
           Restoring old photos{" "}
           <span className="relative whitespace-nowrap text-[#3290EE]">
@@ -55,6 +57,7 @@ const Home: NextPage = () => {
             Restore your photos
           </Link>
         </div>
+
         <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
           <div className="flex flex-col space-y-10 mt-4 mb-16">
             <div className="flex sm:space-x-2 sm:flex-row flex-col">
@@ -83,6 +86,11 @@ const Home: NextPage = () => {
         </div>
       </main>
       <Testimonials />
+
+	  <CallToActionL />
+	  <CallToActionR />
+	  <CallToActionL />
+
       <Footer />
     </div>
   );
