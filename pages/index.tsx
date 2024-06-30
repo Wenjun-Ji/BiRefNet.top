@@ -4,18 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Banner from "../components/Banner";
 import SquigglyLines from "../components/SquigglyLines";
 import { Testimonials } from "../components/Testimonials";
 
+
+
+
+
 const Home: NextPage = () => {
+  // 渲染页面
   return (
     <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
-      <Head>
-        <title>Face Photo Restorer</title>
-      </Head>
 
+      <Head>
+        <title>General Scenario Intelligent High-precision Parsing</title>
+      </Head>
       <Header />
+      <Banner></Banner>
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 sm:mt-28 mt-20">
+        {/*  */}
         <a
           href="https://twitter.com/nutlope/status/1626074563481051136"
           target="_blank"
@@ -25,6 +33,7 @@ const Home: NextPage = () => {
           Used by over <span className="font-semibold">200,000</span> happy
           users
         </a>
+
         <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-slate-900 sm:text-7xl">
           Restoring old photos{" "}
           <span className="relative whitespace-nowrap text-[#3290EE]">
@@ -38,6 +47,7 @@ const Home: NextPage = () => {
           Have old and blurry face photos? Let our AI restore them so those
           memories can live on. 100% free – restore your photos today.
         </p>
+        
         <div className="flex justify-center space-x-4">
           <a
             className="bg-white rounded-xl text-black font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-gray-100 border"
@@ -55,6 +65,7 @@ const Home: NextPage = () => {
             Restore your photos
           </Link>
         </div>
+
         <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
           <div className="flex flex-col space-y-10 mt-4 mb-16">
             <div className="flex sm:space-x-2 sm:flex-row flex-col">
@@ -81,6 +92,8 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+
+
       </main>
       <Testimonials />
       <Footer />
