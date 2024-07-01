@@ -106,9 +106,7 @@ const Home: NextPage = () => {
           <span className="font-bold">YouTube tutorial</span>.
         </a>
         <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5">
-          Dichotomous Segmentation
-          <br></br>
-          any photo
+          Restore any face photo
         </h1>
         <p className="text-slate-500">
           {" "}
