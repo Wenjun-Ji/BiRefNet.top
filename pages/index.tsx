@@ -29,10 +29,12 @@ const Home: NextPage = () => {
       <Banner></Banner>
 
 
+
       <CallToActionR />
       <CallToActionL />
       <CallToActionR />
 
+      
 
       <Testimonials />
       <Footer />
