@@ -1,29 +1,15 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import CustomCard from "../components/CustomCard";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-
-import Banner from "../components/Banner";
-
-import CallToActionL from "../components/CallToActionL";
-import CallToActionR from "../components/CallToActionR";
-
-import SquigglyLines from "../components/SquigglyLines";
-import { Testimonials } from "../components/Testimonials";
-import Features from "../components/Feature";
 import Support from "../components/Support";
+import Features from "../components/Feature";
 import PictureBox from "../components/PictureBox";
 import ImageCarousel from '../components/ImageCarousel'; 
-import TextTiltAnimation from '../components/TextTiltAnimation'; 
-
-
-
-
+import TextTiltAnimation from '../components/TextTiltAnimation';
 
 const Home: NextPage = () => {
-  // 图片数组
   const leftImages = [
     '/ImageCarousel/2.jpg',
     '/ImageCarousel/3.jpg',
@@ -38,31 +24,50 @@ const Home: NextPage = () => {
     '/ImageCarousel/15.jpg'
   ];
 
-  // 渲染页面
   return (
     <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
       <Head>
         <title>General Scenario Intelligent High-precision Parsing</title>
       </Head>
       <Header />
-      {/* <Banner></Banner> */}
 
-	  <div className="relative-container">
-        <ImageCarousel images={leftImages} direction="left" /> 
-        <ImageCarousel images={rightImages} direction="right" /> 
-		<TextTiltAnimation /> 
+      <div className="relative-container">
+        <ImageCarousel images={leftImages} direction="left" />
+        <ImageCarousel images={rightImages} direction="right" />
+        <TextTiltAnimation />
       </div>
-      <Support/>
+      <Support />
       <Features />
+      <PictureBox />
 
-	
 
+      <div className="flex flex-wrap justify-center gap-6 p-6">
+        <CustomCard
+          imageSrc="/CustomCard/11.jpg"
+          imageAlt="AI Background Remover"
+          title="AI Background Remover"
+          description="Automatically remove the background of your image."
+        />
+        <CustomCard
+          imageSrc="/CustomCard/1.jpg"
+          imageAlt="AI Backgrounds"
+          title="AI Backgrounds"
+          description="Generate realistic backgrounds in less than a second."
+        />
+        <CustomCard
+          imageSrc="/CustomCard/17.jpg"
+          imageAlt="Blur Background"
+          title="Blur Background"
+          description="Automatically blur the background of your image."
+        />
+        <CustomCard
+          imageSrc="/CustomCard/18.jpg"
+          imageAlt="AI Retouch"
+          title="AI Retouch"
+          description="Remove unwanted parts of your image with a swipe."
+        />
+      </div>
 
-	  <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
-	  <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
-	  <CallToActionR imageSrc="/CallToAction/17.jpg" imageAlt="flower" />
-      <PictureBox/>
-      <Testimonials />
       <Footer />
     </div>
   );
