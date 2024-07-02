@@ -15,31 +15,50 @@ import { Testimonials } from "../components/Testimonials";
 import Features from "../components/Feature";
 import Support from "../components/Support";
 import PictureBox from "../components/PictureBox";
+import ImageCarousel from '../components/ImageCarousel'; 
+import TextTiltAnimation from '../components/TextTiltAnimation'; 
 
 
 
 
 
 const Home: NextPage = () => {
+  // 图片数组
+  const leftImages = [
+    '/ImageCarousel/2.jpg',
+    '/ImageCarousel/3.jpg',
+    '/ImageCarousel/6.jpg',
+    '/ImageCarousel/7.jpg'
+  ];
+
+  const rightImages = [
+    '/ImageCarousel/8.jpg',
+    '/ImageCarousel/10.jpg',
+    '/ImageCarousel/12.jpg',
+    '/ImageCarousel/15.jpg'
+  ];
+
   // 渲染页面
   return (
     <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
-
       <Head>
         <title>General Scenario Intelligent High-precision Parsing</title>
       </Head>
       <Header />
       <Banner></Banner>
-
       <Features />
-
       <Support/>
+	
 
-      <CallToActionR />
-      <CallToActionL />
-      <CallToActionR />
+      <div className="relative-container">
+        <ImageCarousel images={leftImages} direction="left" /> 
+        <ImageCarousel images={rightImages} direction="right" /> 
+		<TextTiltAnimation /> 
+      </div>
 
-      
+	  <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
+	  <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
+	  <CallToActionR imageSrc="/CallToAction/17.jpg" imageAlt="flower" />
       <PictureBox/>
       <Testimonials />
       <Footer />

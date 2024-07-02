@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const CallToActionL = () => {
+const CallToActionL = ({ imageSrc = '/og-image.png', imageAlt = 'AI Generated Backgrounds' }) => { 
   return (
     <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 mb-8">
       <div className="text-center md:text-left md:w-1/2 md:pr-16">
@@ -19,8 +19,8 @@ const CallToActionL = () => {
       </div>
       <div className="mt-8 md:mt-0 md:w-1/2">
         <Image
-          src="/og-image.png"  
-          alt="AI Generated Backgrounds"
+          src={imageSrc}  
+          alt={imageAlt}
           width={500}
           height={300}
           className="rounded-lg"

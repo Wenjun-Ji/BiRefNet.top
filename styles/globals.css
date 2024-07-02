@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.relative-container {
+	position: relative; 
+	width: 100%;
+	height: 100vh;
+}
+
+.relative-container > .textTiltAnimation {
+	position: absolute;
+	top: 36%; 
+	left: 50%; 
+	transform: translate(-50%, -50%);
+	width: 80%; 
+	z-index: 10; 
+	pointer-events: none;
+}

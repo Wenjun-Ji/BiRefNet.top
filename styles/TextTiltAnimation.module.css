@@ -1,0 +1,26 @@
+/* TextTiltAnimation.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.textContainer {
+  position: absolute;
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: center;
+  height: 100vh;
+  z-index: 10; 
+  pointer-events: none; 
+  left: 20%;
+}
+
+.text {
+  font-size: 3.8rem; 
+  font-family: 'Montserrat', sans-serif; 
+  color: rgb(255, 255, 255); 
+}
+
+.char {
+  display: inline-block;
+}

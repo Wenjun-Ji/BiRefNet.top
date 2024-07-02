@@ -1,0 +1,52 @@
+.carouselContainer {
+	overflow: hidden;
+	width: 100%; /* 占据整个页面宽度 */
+	position: relative;
+  }
+  
+  .carouselTrack {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+  }
+  
+  .scrollLeft {
+	animation: scrollLeft 40s linear infinite;
+  }
+  
+  .scrollRight {
+	animation: scrollRight 40s linear infinite;
+  }
+  
+  .carouselSlide {
+	flex: 0 0 auto; /* 确保每个幻灯片项都按其内容的宽度 */
+	box-sizing: border-box;
+	margin: 0 4px; /* 添加图片之间的间隔 */
+	display: flex;
+	align-items: center; /* 垂直居中 */
+	height: 340px; /* 设定一个统一的最小高度 */
+  }
+  
+  .carouselSlide img {
+	width: 100%;
+	height: 98%;
+	object-fit: contain; /* 确保图片适应容器，同时保持宽高比 */
+  }
+  
+  @keyframes scrollLeft {
+	0% {
+	  transform: translateX(0);
+	}
+	100% {
+	  transform: translateX(-100%);
+	}
+  }
+  
+  @keyframes scrollRight {
+	0% {
+	  transform: translateX(-100%);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
