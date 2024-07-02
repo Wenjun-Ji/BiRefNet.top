@@ -45,16 +45,18 @@ const Home: NextPage = () => {
         <title>General Scenario Intelligent High-precision Parsing</title>
       </Head>
       <Header />
-      <Banner></Banner>
-      <Features />
-      <Support/>
-	
+      {/* <Banner></Banner> */}
 
-      <div className="relative-container">
+	  <div className="relative-container">
         <ImageCarousel images={leftImages} direction="left" /> 
         <ImageCarousel images={rightImages} direction="right" /> 
 		<TextTiltAnimation /> 
       </div>
+      <Support/>
+      <Features />
+
+	
+
 
 	  <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
 	  <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
