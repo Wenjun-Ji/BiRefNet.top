@@ -9,7 +9,7 @@ const testimonials = [
       author: {
         name: "Guillermo Rauch",
         role: "CEO at Vercel",
-        image: "/g.jpg",
+        image: "/Testimonials/g.jpg",
       },
     },
     {
@@ -19,7 +19,7 @@ const testimonials = [
       author: {
         name: "Malte Ubl",
         role: "CTO at Vercel",
-        image: "/malte.jpg",
+        image: "/Testimonials/malte.jpg",
       },
     },
   ],
@@ -31,7 +31,7 @@ const testimonials = [
       author: {
         name: "Fawaz Adeniji",
         role: "Software Engineer",
-        image: "/fawaz.jpg",
+        image: "/Testimonials/fawaz.jpg",
       },
     },
     {
@@ -41,7 +41,7 @@ const testimonials = [
       author: {
         name: "Sergei Vinderskikh",
         role: "CPO at Treeum",
-        image: "/sergei.jpg",
+        image: "/Testimonials/sergei.jpg",
       },
     },
   ],
@@ -53,7 +53,7 @@ const testimonials = [
       author: {
         name: "Himanil Gole",
         role: "Designer & Founder at CBREX",
-        image: "/himanil.jpg",
+        image: "/Testimonials/himanil.jpg",
       },
     },
     {
@@ -63,7 +63,7 @@ const testimonials = [
       author: {
         name: "Rod Ellison",
         role: "Software Engineer",
-        image: "/rod.jpg",
+        image: "/Testimonials/rod.jpg",
       },
     },
   ],

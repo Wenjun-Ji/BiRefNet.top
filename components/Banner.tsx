@@ -10,7 +10,7 @@ export default function Banner() {
 
       {/* 中央内容 */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-md">
-        <h1 className="font-display text-5xl font-bold tracking-normal text-white sm:text-6xl">
+        <h1 className="font-display text-5xl font-bold tracking-normal text-white sm:text-7xl">
           <span className="relative whitespace-nowrap text-[#3290EE]">
             <SquigglyLines />
             <span className="relative">General</span>  Scenario

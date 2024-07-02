@@ -12,6 +12,9 @@ import CallToActionR from "../components/CallToActionR";
 
 import SquigglyLines from "../components/SquigglyLines";
 import { Testimonials } from "../components/Testimonials";
+import Features from "../components/Feature";
+import Support from "../components/Support";
+import PictureBox from "../components/PictureBox";
 
 
 
@@ -28,14 +31,16 @@ const Home: NextPage = () => {
       <Header />
       <Banner></Banner>
 
+      <Features />
 
+      <Support/>
 
       <CallToActionR />
       <CallToActionL />
       <CallToActionR />
 
       
-
+      <PictureBox/>
       <Testimonials />
       <Footer />
     </div>
