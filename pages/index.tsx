@@ -11,6 +11,8 @@ import TextTiltAnimation from '../components/TextTiltAnimation';
 import CallToActionL from "../components/CallToActionL";
 import CallToActionR from "../components/CallToActionR";
 import Testimonials from "../components/Testimonials";
+import Application from "../components/Application";
+
 
 const Home: NextPage = () => {
   const leftImages = [
@@ -61,7 +63,11 @@ const Home: NextPage = () => {
         <PictureBox/>
       </div>
 
-      
+      <div id = "applications">
+        <Application />
+      </div>
+
+
 
       <div id ="testimonials">
         <Testimonials />
