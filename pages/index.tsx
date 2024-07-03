@@ -1,26 +1,18 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import CustomCard from "../components/CustomCard";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-
-import Banner from "../components/Banner";
-
-import CallToActionL from "../components/CallToActionL";
-import CallToActionR from "../components/CallToActionR";
-
-import SquigglyLines from "../components/SquigglyLines";
-import { Testimonials } from "../components/Testimonials";
-import Features from "../components/Feature";
 import Support from "../components/Support";
+import Features from "../components/Feature";
 import PictureBox from "../components/PictureBox";
 import ImageCarousel from '../components/ImageCarousel'; 
 import TextTiltAnimation from '../components/TextTiltAnimation'; 
-
+import CallToActionL from "../components/CallToActionL";
+import CallToActionR from "../components/CallToActionR";
+import Testimonials from "../components/Testimonials";
 
 const Home: NextPage = () => {
-  // 图片数组
   const leftImages = [
     '/ImageCarousel/2.jpg',
     '/ImageCarousel/3.jpg',
@@ -35,7 +27,6 @@ const Home: NextPage = () => {
     '/ImageCarousel/15.jpg'
   ];
 
-  // 渲染页面
   return (
     <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
       <Head>
@@ -69,6 +60,9 @@ const Home: NextPage = () => {
       <div id = "picturebox">
         <PictureBox/>
       </div>
+
+      
+
       <div id ="testimonials">
         <Testimonials />
       </div>
