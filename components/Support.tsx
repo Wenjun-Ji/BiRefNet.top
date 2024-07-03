@@ -2,13 +2,13 @@ export default function Support() {
   return (
     <div className="px-4 sm:px-6 md:px-8 xl:px-10 py-e400" data-translation-key="096bfd3f-eb44-4a5b-835f-37cea7979919">
       <div className="mx-auto max-w-[1200px]">
-        <div className="text-3xl font-bold text-center text-content-primary mb-4">
-          本产品由以下技术支持
+        <div className="text-4xl font-bold text-center text-content-primary mb-4">
+          <h1>本产品由以下技术支持</h1>
         </div>
         <div className="mt-4 text-gray-600 text-center">
-          <p className="mb-2 text-2xl">
+          <p className="mb-2 text-4xl">
             Title: 
-            <a href="https://arxiv.org/pdf/2401.03407.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+            <a href="https://arxiv.org/pdf/2401.03407.pdf" target="_blank" rel="noopener noreferrer" className="text-black-500 hover:underline">
               Bilateral Reference for High-Resolution Dichotomous Image Segmentation
             </a>{""} (arXiv 2024).
           </p>

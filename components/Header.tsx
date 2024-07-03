@@ -37,7 +37,7 @@ const Header: React.FC = () => {
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
+          <p className="font-bold text-inherit">BiRefNet</p>
         </NavbarBrand>
       </NavbarContent>
 
@@ -45,25 +45,38 @@ const Header: React.FC = () => {
         <div className="flex items-center">
           <NavbarBrand>
             <AcmeLogo />
-            <p className="font-bold text-inherit">ACME</p>
+            <p className="font-bold text-inherit">BiRefNet</p>
           </NavbarBrand>
         </div>
         <div className="flex items-center justify-center flex-grow gap-4">
           <NavbarItem>
-            <Link color="foreground" href="#">
-              Features
+            <Link color="foreground" href="#support">
+              Support
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="#" aria-current="page">
-              Customers
+            <Link  href="#video" aria-current="page">
+              Video
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
-              Integrations
+            <Link color="foreground" href="#calltoaction">
+              Features
             </Link>
           </NavbarItem>
+
+          <NavbarItem>
+            <Link color="foreground" href="#picturebox">
+              Examples
+            </Link>
+          </NavbarItem>
+
+          <NavbarItem>
+            <Link color="foreground" href="#application">
+              Application
+            </Link>
+          </NavbarItem>
+
         </div>
         <div className="flex items-center">
           <NavbarItem className="hidden lg:flex">

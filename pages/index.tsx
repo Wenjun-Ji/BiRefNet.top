@@ -19,9 +19,6 @@ import ImageCarousel from '../components/ImageCarousel';
 import TextTiltAnimation from '../components/TextTiltAnimation'; 
 
 
-
-
-
 const Home: NextPage = () => {
   // 图片数组
   const leftImages = [
@@ -45,24 +42,36 @@ const Home: NextPage = () => {
         <title>General Scenario Intelligent High-precision Parsing</title>
       </Head>
       <Header />
-      {/* <Banner></Banner> */}
 
-	  <div className="relative-container">
+      {/* <Banner></Banner> */}
+	    <div className="relative-container">
         <ImageCarousel images={leftImages} direction="left" /> 
         <ImageCarousel images={rightImages} direction="right" /> 
-		<TextTiltAnimation /> 
+		    <TextTiltAnimation /> 
       </div>
-      <Support/>
-      <Features />
-
-	
 
 
-	  <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
-	  <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
-	  <CallToActionR imageSrc="/CallToAction/17.jpg" imageAlt="flower" />
-      <PictureBox/>
-      <Testimonials />
+      <div id = "support" className="mt-40">
+  <     Support />
+      </div>
+
+
+      <div id="features"> 
+        <Features /> 
+      </div>
+
+      <div id = "calltoaction">
+	      <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
+	      <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
+	      <CallToActionR imageSrc="/CallToAction/17.jpg" imageAlt="flower" />
+      </div>
+      
+      <div id = "picturebox">
+        <PictureBox/>
+      </div>
+      <div id ="testimonials">
+        <Testimonials />
+      </div>
       <Footer />
     </div>
   );
