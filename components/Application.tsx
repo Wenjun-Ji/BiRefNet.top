@@ -23,10 +23,10 @@ const Application: React.FC = () => {
       description: 'Generate realistic backgrounds in less than a second.',
     },
     {
-        imageSrc: '/CustomCard/1.jpg',
-        imageAlt: 'AI Backgrounds',
-        title: 'AI Backgrounds',
-        description: 'Generate realistic backgrounds in less than a second.',
+        imageSrc: '/CustomCard/11.jpg',
+        imageAlt: 'AI Background Remover',
+        title: 'AI Background Remover',
+        description: 'Automatically remove the background of your image.',
     },
 
     {

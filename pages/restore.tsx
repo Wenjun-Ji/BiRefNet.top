@@ -8,7 +8,7 @@ import { UploadDropzone } from "react-uploader";
 import { Uploader } from "uploader";
 import { CompareSlider } from "../components/CompareSlider";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import RestoreHeader from "../components/RestoreHeader";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import Toggle from "../components/Toggle";
@@ -16,6 +16,7 @@ import appendNewToName from "../utils/appendNewToName";
 import downloadPhoto from "../utils/downloadPhoto";
 import NSFWPredictor from "../utils/nsfwCheck";
 import va from "@vercel/analytics";
+
 
 // Configuration for the uploader
 const uploader = Uploader({
@@ -94,7 +95,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <RestoreHeader />
+
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
         <a
           href="https://youtu.be/FRQtFDDrUXQ"
@@ -117,7 +119,7 @@ const Home: NextPage = () => {
           photos generated and counting.
         </p>
         <ResizablePanel>
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence mode="wait">
             <motion.div className="flex justify-between items-center w-full flex-col mt-4">
               <Toggle
                 className={`${restoredLoaded ? "visible" : "invisible"} mb-6`}

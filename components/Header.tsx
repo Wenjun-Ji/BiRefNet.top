@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -14,19 +14,61 @@ import { AcmeLogo } from "../components/AcmeLogo";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState(""); // State to track active link
+
+  // References for each section on the page
+  const supportRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const examplesRef = useRef<HTMLDivElement>(null);
+  const applicationsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    { label: "Support", href: "#support", ref: supportRef },
+    { label: "Video", href: "#video", ref: videoRef },
+    { label: "Features", href: "#features", ref: featuresRef },
+    { label: "Examples", href: "#picturebox", ref: examplesRef },
+    { label: "Applications", href: "#applications", ref: applicationsRef },
+    { label: "Contact", href: "#contact", ref: contactRef },
   ];
+
+  const handleIntersection = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const item = menuItems.find((i) => i.ref.current === entry.target);
+          if (item) {
+            console.log(`Section ${item.label} is intersecting`);
+            setActiveLink(item.label);
+          }
+        }
+      });
+    },
+    [menuItems]
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.5,
+    });
+
+    menuItems.forEach((item) => {
+      if (item.ref.current) {
+        observer.observe(item.ref.current);
+        console.log(`Observing ${item.label}`);
+      }
+    });
+
+    return () => {
+      menuItems.forEach((item) => {
+        if (item.ref.current) {
+          observer.unobserve(item.ref.current);
+          console.log(`Stopped observing ${item.label}`);
+        }
+      });
+    };
+  }, [handleIntersection, menuItems]);
 
   return (
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
@@ -49,50 +91,37 @@ const Header: React.FC = () => {
           </NavbarBrand>
         </div>
         <div className="flex items-center justify-center flex-grow gap-4">
-          <NavbarItem>
-            <Link color="foreground" href="#support">
-              Support
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link  href="#video" aria-current="page">
-              Video
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link color="foreground" href="#calltoaction">
-              Features
-            </Link>
-          </NavbarItem>
-
-          <NavbarItem>
-            <Link color="foreground" href="#picturebox">
-              Examples
-            </Link>
-          </NavbarItem>
-
-          <NavbarItem>
-            <Link color="foreground" href="#application">
-              Application
-            </Link>
-          </NavbarItem>
-
+          {menuItems.map((item, index) => (
+            <NavbarItem key={`${item.label}-${index}`}>
+              <Link
+                color="foreground"
+                href={item.href}
+                className={
+                  activeLink === item.label
+                    ? "font-bold text-warning" // 根据视口对label进行加粗 这个地方没实现 哎
+                    : "font-bold"
+                }
+              >
+                {item.label}
+              </Link>
+            </NavbarItem>
+          ))}
         </div>
         <div className="flex items-center">
-          <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
-          </NavbarItem>
           <NavbarItem className="ml-4">
-            <Button as={Link} color="warning" href="#" variant="flat">
-              Sign Up
-            </Button>
+          <Link
+              href="/restore"
+              className="bg-black text-white px-5 py-1.5 rounded-md"
+            >
+              Start
+            </Link>
           </NavbarItem>
         </div>
       </NavbarContent>
 
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
               className="w-full"
               color={
@@ -102,10 +131,10 @@ const Header: React.FC = () => {
                   ? "danger"
                   : "foreground"
               }
-              href="#"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
