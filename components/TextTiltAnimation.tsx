@@ -7,44 +7,42 @@ const TextTiltAnimation: React.FC = () => {
 
   useEffect(() => {
     if (containerRef.current) {
-		const texts = containerRef.current.querySelectorAll(`.${styles.text}`);
-		gsap.fromTo(texts[0].querySelectorAll(`.${styles.char}`),
-			{ y: 50, rotation: 13, opacity: 0 },
-			{ y: 0, rotation: 0, opacity: 1, duration: 2, ease: "power4.out", stagger: 0.02 }
-		);
-		
-		const tl = gsap.timeline({repeat: -1, repeatDelay: 1, delay: 2}); // 开始后续动画后给第一行文字一点时间
+      const texts = containerRef.current.querySelectorAll(`.${styles.text}`);
+      gsap.fromTo(texts[0].querySelectorAll(`.${styles.char}`),
+        { y: 50, rotation: 13, opacity: 0 },
+        { y: 0, rotation: 0, opacity: 1, duration: 2, ease: "power4.out", stagger: 0.02 }
+      );
 
-		const charsline2 = texts[1].querySelectorAll(`.${styles.char}`);
-		tl.fromTo(charsline2, 
-			{ y: 50, rotation: 13, opacity: 0 },
-			{ y: 0, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 }
-		).to(charsline2, 
-			{ y: 50, rotation: -13, opacity: 0, duration: 2, ease: "power4.in" },
-			"+=0.5"
-		);
+      const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, delay: 2 }); // 开始后续动画后给第一行文字一点时间
 
-		const charsline3 = texts[2].querySelectorAll(`.${styles.char}`);
-		const charsline4 = texts[3].querySelectorAll(`.${styles.char}`);
+      const charsline2 = texts[1].querySelectorAll(`.${styles.char}`);
+      tl.fromTo(charsline2,
+        { y: 50, rotation: 13, opacity: 0 },
+        { y: 0, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 }
+      ).to(charsline2,
+        { y: 50, rotation: -13, opacity: 0, duration: 2, ease: "power4.in" },
+        "+=0.5"
+      );
 
-		tl.fromTo(charsline3, 
-			{ y: -50, rotation: 13, opacity: 0 },
-			{ y: -100, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 }
-		)
-		.fromTo(charsline4, 
-			{ y: -50, rotation: 13, opacity: 0 },
-			{ y: -100, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 },
-			"<" 
-		)
-		.to(charsline3, 
-			{ y: 50, rotation: -13, opacity: 0, duration: 2, ease: "power4.in" }
-		)
-		.to(charsline4, 
-			{ y: 50, rotation: -13, opacity: 0, duration: 2, ease: "power4.in" },
-			"<" 
-		);
+      const charsline3 = texts[2].querySelectorAll(`.${styles.char}`);
+      const charsline4 = texts[3].querySelectorAll(`.${styles.char}`);
 
-
+      tl.fromTo(charsline3,
+        { y: -50, rotation: 13, opacity: 0 },
+        { y: -100, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 }
+      )
+        .fromTo(charsline4,
+          { y: -50, rotation: 13, opacity: 0 },
+          { y: -100, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 },
+          "<"
+        )
+        .to(charsline3,
+          { y: 50, rotation: -13, opacity: 0, duration: 2, ease: "power4.in" }
+        )
+        .to(charsline4,
+          { y: 50, rotation: -13, opacity: 0, duration: 2, ease: "power4.in" },
+          "<"
+        );
     }
   }, []);
 
