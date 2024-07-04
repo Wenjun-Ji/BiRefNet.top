@@ -27,8 +27,8 @@ export default async function handler(
   if (ratelimit) {
     const identifier = requestIp.getClientIp(req);
     const result = await ratelimit.limit(identifier!);
-    res.setHeader("X-RateLimit-Limit", result.limit);
-    res.setHeader("X-RateLimit-Remaining", result.remaining);
+    res.setHeader("X-RateLimit-Limit", result.limit.toString());
+    res.setHeader("X-RateLimit-Remaining", result.remaining.toString());
 
     if (!result.success) {
       res
@@ -48,7 +48,7 @@ export default async function handler(
     },
     body: JSON.stringify({
       version:
-       "9c5380630f1124b2e25582d0438d0e571b8e2c0125b83841d01b1706ba43364c",
+       "f3e7ae8430032db9e9923c65f95ddf9f5b7ded8b7780163f18d1db67215dbd6d",
       input: { image: imageUrl},
     }),
   });
@@ -58,9 +58,18 @@ export default async function handler(
 
   // GET request to get the status of the image restoration process & return the result when it's ready
   let restoredImage: string | null = null;
+  const startTime = Date.now();
+  const maxDuration = 300000; //  最大时间 300 seconds 
+
   while (!restoredImage) {
-    // Loop in 1s intervals until the alt text is ready
-    console.log("polling for result..."); 
+    if (Date.now() - startTime > maxDuration) {
+      console.error("Polling timed out.");
+      res.status(500).json("Image restoration process timed out.");
+      return;
+    }
+
+    // Loop in 1s intervals until the image is ready or timeout occurs
+    console.log("polling for result...");
     let finalResponse = await fetch(endpointUrl, {
       method: "GET",
       headers: {
@@ -78,6 +87,7 @@ export default async function handler(
       await new Promise((resolve) => setTimeout(resolve, 1000));
     }
   }
+
   res
     .status(200)
     .json(restoredImage ? restoredImage : "Failed to restore image");

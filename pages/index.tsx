@@ -1,10 +1,9 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import CustomCard from "../components/CustomCard";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Support from "../components/Support";
-import Features from "../components/Feature";
+import Features from "../components/Features";
 import PictureBox from "../components/PictureBox";
 import ImageCarousel from '../components/ImageCarousel'; 
 import TextTiltAnimation from '../components/TextTiltAnimation'; 
@@ -13,6 +12,7 @@ import CallToActionR from "../components/CallToActionR";
 import Testimonials from "../components/Testimonials";
 import Application from "../components/Application";
 import { useRef } from "react";
+import Answer from "../components/Answer";
 
 
 const Home: NextPage = () => {
@@ -63,6 +63,7 @@ const Home: NextPage = () => {
         <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
         <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
         <CallToActionR imageSrc="/CallToAction/17.jpg" imageAlt="flower" />
+        <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Bridge" />
       </div>
 
       <div id="picturebox" ref={examplesRef}>
@@ -77,6 +78,8 @@ const Home: NextPage = () => {
       <div id="applications" ref={applicationsRef}>
         <Application />
       </div>
+
+      <Answer/>
 
       <Footer />
     </div>

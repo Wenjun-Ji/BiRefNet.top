@@ -8,7 +8,6 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../components/AcmeLogo";
 
@@ -96,11 +95,7 @@ const Header: React.FC = () => {
               <Link
                 color="foreground"
                 href={item.href}
-                className={
-                  activeLink === item.label
-                    ? "font-bold text-warning" // 根据视口对label进行加粗 这个地方没实现 哎
-                    : "font-bold"
-                }
+                className={`font-bold px-3 py-2 rounded-md hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out ${activeLink === item.label ? "text-warning" : ""}`}
               >
                 {item.label}
               </Link>
@@ -109,9 +104,9 @@ const Header: React.FC = () => {
         </div>
         <div className="flex items-center">
           <NavbarItem className="ml-4">
-          <Link
+            <Link
               href="/restore"
-              className="bg-black text-white px-5 py-1.5 rounded-md"
+              className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
             >
               Start
             </Link>
