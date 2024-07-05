@@ -13,6 +13,7 @@ import Testimonials from "../components/Testimonials";
 import Application from "../components/Application";
 import { useRef } from "react";
 import Answer from "../components/Answer";
+import Link from "next/link";
 
 
 const Home: NextPage = () => {
@@ -47,8 +48,12 @@ const Home: NextPage = () => {
 
       <div className="relative-container">
         <ImageCarousel images={leftImages} direction="left" /> 
-        <ImageCarousel images={rightImages} direction="right" /> 
-        <TextTiltAnimation /> 
+        <ImageCarousel images={rightImages} direction="right">
+          <Link className="px-10 py-5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-lg font-semibold rounded-lg shadow-lg opacity-30 hover:opacity-100 transition-opacity" href='/segment'>
+            Segment your images
+          </Link>
+        </ImageCarousel>
+        <TextTiltAnimation />         
       </div>
 
       <div id="support" ref={supportRef} className="mt-40">

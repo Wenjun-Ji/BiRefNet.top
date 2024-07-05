@@ -4,9 +4,10 @@ import styles from '../styles/ImageCarousel.module.css';
 interface ImageCarouselProps {
   images: string[];
   direction?: 'left' | 'right';
+  children?: React.ReactNode;
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, direction = 'left' }) => {
+const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, direction = 'left', children }) => {
   const isRight = direction === 'right';
   return (
     <div className={styles.carouselContainer}>
@@ -16,6 +17,9 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images, direction = 'left
             <img src={image} alt={`Slide ${index}`} />
           </div>
         ))}
+      </div>
+      <div className={styles.carouselButton}>
+        {children}
       </div>
     </div>
   );
