@@ -21,6 +21,7 @@
     "@vercel/analytics": "^0.1.9-beta.4",
     "before-after-slider": "^1.0.1",
     "caniuse-lite": "^1.0.30001639",
+    "canvas-confetti": "^1.9.3",
     "framer-motion": "^11.2.12",
     "gsap": "^3.12.5",
     "next": "^13.4.7",

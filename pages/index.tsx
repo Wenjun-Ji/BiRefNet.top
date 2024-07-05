@@ -14,6 +14,7 @@ import Application from "../components/Application";
 import { useRef } from "react";
 import Answer from "../components/Answer";
 import Link from "next/link";
+import CustomButton from "../components/CustomButton";
 
 
 const Home: NextPage = () => {
@@ -46,15 +47,16 @@ const Home: NextPage = () => {
       </Head>
       <Header />
 
-      <div className="relative-container">
-        <ImageCarousel images={leftImages} direction="left" /> 
-        <ImageCarousel images={rightImages} direction="right">
-          <Link className="px-10 py-5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-lg font-semibold rounded-lg shadow-lg opacity-30 hover:opacity-100 transition-opacity" href='/segment'>
-            Segment your images
-          </Link>
-        </ImageCarousel>
-        <TextTiltAnimation />         
+    <div className="relative-container relative">
+      <ImageCarousel images={leftImages} direction="left" /> 
+      <ImageCarousel images={rightImages} direction="right" />
+      <div className="absolute top-3/4 left-1/2 transform -translate-x-1/2 z-10 mt-10">
+        <CustomButton text="Try BirefNet Now 🥰" />
       </div>
+      <TextTiltAnimation />
+    </div>
+
+
 
       <div id="support" ref={supportRef} className="mt-40">
         <Support />
