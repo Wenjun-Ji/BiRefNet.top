@@ -28,12 +28,12 @@ const TextTiltAnimation: React.FC = () => {
       const charsline4 = texts[3].querySelectorAll(`.${styles.char}`);
 
       tl.fromTo(charsline3,
-        { y: -50, rotation: 13, opacity: 0 },
-        { y: -100, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 }
+        { y: -40, rotation: 13, opacity: 0 },
+        { y: -90, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 }
       )
         .fromTo(charsline4,
-          { y: -50, rotation: 13, opacity: 0 },
-          { y: -100, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 },
+          { y: -40, rotation: 13, opacity: 0 },
+          { y: -90, rotation: 0, opacity: 0.9, duration: 2, ease: "power4.out", stagger: 0.02 },
           "<"
         )
         .to(charsline3,

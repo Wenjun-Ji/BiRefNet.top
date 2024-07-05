@@ -25,7 +25,7 @@ export default function Banner() {
 
         <Link
             className="mt-6 px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition"
-            href='/restore'
+            href='/segment'
           >
             Get Started
         </Link>
