@@ -14,9 +14,7 @@ import va from "@vercel/analytics";
 
 // Configuration for the uploader
 const uploader = Uploader({
-  apiKey: !!process.env.NEXT_PUBLIC_UPLOAD_API_KEY
-    ? process.env.NEXT_PUBLIC_UPLOAD_API_KEY
-    : "free",
+  apiKey: process.env.NEXT_PUBLIC_UPLOAD_API_KEY || "free",
 });
 const options = {
   maxFileCount: 1,
@@ -27,9 +25,7 @@ const options = {
     let isSafe = false;
     try {
       isSafe = await NSFWPredictor.isSafeImg(file);
-      if (!isSafe)
-      // va.track("NSFW Image blocked");
-      console.log("NSFW Image blocked");
+      if (!isSafe) console.log("NSFW Image blocked");
     } catch (error) {
       console.error("NSFW predictor threw an error", error);
     }
@@ -41,9 +37,9 @@ const options = {
 
 const Demo = () => {
   const [originalPhoto, setOriginalPhoto] = useState<string | null>(null);
-  const [segmentedImage, setsegmentedImage] = useState<string | null>(null);
+  const [segmentedImage, setSegmentedImage] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [segmentedLoaded, setsegmentedLoaded] = useState<boolean>(false);
+  const [segmentedLoaded, setSegmentedLoaded] = useState<boolean>(false);
   const [sideBySide, setSideBySide] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [photoName, setPhotoName] = useState<string | null>(null);
@@ -93,15 +89,15 @@ const Demo = () => {
     if (res.status !== 200) {
       setError(newPhoto);
     } else {
-      setsegmentedImage(newPhoto);
+      setSegmentedImage(newPhoto);
     }
     setLoading(false);
   }
 
   const handleSampleClick = (sampleUrl: string) => {
     setOriginalPhoto(sampleUrl);
-    setsegmentedImage(localSegmentedImages[sampleUrl]);
-    setPhotoName(sampleUrl.split('/').pop() || "sample"); // Extract file name from URL or use 'sample'
+    setSegmentedImage(localSegmentedImages[sampleUrl]);
+    setPhotoName(sampleUrl.split("/").pop() || "sample"); // Extract file name from URL or use 'sample'
   };
 
   return (
@@ -111,9 +107,7 @@ const Demo = () => {
         <br />
         Any Photo
       </h1>
-      <p className="text-slate-500">
-	  Upload your image or try a sample
-      </p>
+      <p className="text-slate-500">Upload your image or try a sample</p>
       <AnimatePresence mode="wait">
         <motion.div className="flex justify-between items-center w-full flex-col mt-4">
           <Toggle
@@ -125,21 +119,21 @@ const Demo = () => {
           {!originalPhoto && (
             <div className="mt-4">
               <h2 className="mb-2 font-medium text-lg">Sample Images</h2>
-              <div className="flex space-x-4 justify-center">
+              <div className="flex flex-wrap space-x-4 justify-center">
                 {sampleImages.map((url, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ y: -10 }}
                     className="cursor-pointer"
                     onClick={() => handleSampleClick(url)}
-                    style={{ width: 100, height: 100, position: 'relative' }}
+                    style={{ width: 100, height: 100, position: "relative" }}
                   >
                     <Image
                       src={url}
                       alt={`Sample ${index + 1}`}
                       className="rounded-2xl shadow-md"
                       fill
-                      style={{ objectFit: 'cover', objectPosition: 'center' }}
+                      style={{ objectFit: "cover", objectPosition: "center" }}
                     />
                   </motion.div>
                 ))}
@@ -151,38 +145,43 @@ const Demo = () => {
               alt="original photo"
               src={originalPhoto}
               className="rounded-2xl shadow-md"
+              layout="responsive"
               width={475}
               height={475}
             />
           )}
           {segmentedImage && originalPhoto && sideBySide && (
-            <CompareSlider
-              original={originalPhoto!}
-              segmented={segmentedImage!}
-            />
+            <div className="w-full sm:w-auto">
+              <CompareSlider
+                original={originalPhoto!}
+                segmented={segmentedImage!}
+              />
+            </div>
           )}
           {segmentedImage && originalPhoto && !sideBySide && (
-            <div className="flex sm:space-x-4 sm:flex-row flex-col">
-              <div>
+            <div className="flex sm:space-x-4 sm:flex-row flex-col w-full sm:w-auto">
+              <div className="flex-1">
                 <h2 className="mb-1 font-medium text-lg">Original Image</h2>
                 <Image
                   alt="original photo"
                   src={originalPhoto}
                   className="rounded-2xl relative shadow-md"
+                  layout="responsive"
                   width={475}
                   height={475}
                 />
               </div>
-              <div className="sm:mt-0 mt-8">
+              <div className="flex-1 sm:mt-0 mt-8">
                 <h2 className="mb-1 font-medium text-lg">Segmented Image</h2>
                 <a href={segmentedImage} target="_blank" rel="noreferrer">
                   <Image
                     alt="segmented photo"
                     src={segmentedImage}
                     className="rounded-2xl relative sm:mt-0 mt-2 cursor-zoom-in shadow-md"
+                    layout="responsive"
                     width={475}
                     height={475}
-                    onLoadingComplete={() => setsegmentedLoaded(true)}
+                    onLoadingComplete={() => setSegmentedLoaded(true)}
                   />
                 </a>
               </div>
@@ -211,8 +210,8 @@ const Demo = () => {
               <button
                 onClick={() => {
                   setOriginalPhoto(null);
-                  setsegmentedImage(null);
-                  setsegmentedLoaded(false);
+                  setSegmentedImage(null);
+                  setSegmentedLoaded(false);
                   setSideBySide(false);
                   setError(null);
                 }}
@@ -230,7 +229,7 @@ const Demo = () => {
                 }}
                 className="bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition"
               >
-                Download segmented Photo
+                Download Segmented Photo
               </button>
             )}
           </div>
