@@ -9,12 +9,8 @@ import ImageCarousel from '../components/ImageCarousel';
 import TextTiltAnimation from '../components/TextTiltAnimation'; 
 import CallToActionL from "../components/CallToActionL";
 import CallToActionR from "../components/CallToActionR";
-import Testimonials from "../components/Testimonials";
 import Application from "../components/Application";
 import { useRef } from "react";
-import Answer from "../components/Answer";
-import Link from "next/link";
-import CustomButton from "../components/CustomButton";
 import Business from "../components/Business";
 
 const Home: NextPage = () => {

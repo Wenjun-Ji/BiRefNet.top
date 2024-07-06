@@ -17,13 +17,11 @@ const SegmentHeader: React.FC = () => {
 
   // References for each section on the page
   const contrastRef = useRef<HTMLDivElement>(null);
-  const testimonialsRef = useRef<HTMLDivElement>(null);
   const demoRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
     { label: "Demo", href: "#demo", ref: demoRef },
     { label: "Contrast", href: "#contrast", ref: contrastRef },
-    { label: "Testimonials", href: "#testimonials", ref: testimonialsRef },
   ];
 
   const handleIntersection = useCallback(
@@ -88,7 +86,7 @@ const SegmentHeader: React.FC = () => {
             </Link>
           </NavbarBrand>
         </div>
-        <div className="flex items-center justify-center flex-grow gap-4">
+        <div className="flex items-center justify-start flex-grow gap-4">
           {menuItems.map((item, index) => (
             <NavbarItem key={`${item.label}-${index}`}>
               <Link

@@ -110,7 +110,7 @@ const Demo = () => {
         Any Photo
       </h1>
       <p className="text-slate-500">
-        <CountUp start={100000} end={325321} duration={2} separator="," /> photos generated and counting.
+	  Upload your image or try a sample
       </p>
       <AnimatePresence mode="wait">
         <motion.div className="flex justify-between items-center w-full flex-col mt-4">
