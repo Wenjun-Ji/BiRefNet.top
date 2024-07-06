@@ -47,7 +47,7 @@ const Home: NextPage = () => {
         </Head>
       <Header />
 
-      <div className="relative-container relative">
+      <div className="relative-container relative" style={{top : '-40px'}}>
         <ImageCarousel images={leftImages} direction="left" /> 
         <ImageCarousel images={rightImages} direction="right" />
         <TextTiltAnimation />

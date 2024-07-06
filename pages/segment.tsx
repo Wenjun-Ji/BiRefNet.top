@@ -9,7 +9,7 @@ import CallToActionL from "../components/CallToActionL";
 import { useRef } from "react";
 import Testimonials from "../components/Testimonials";
 import Business from "../components/Business";
-
+import Contrast from "../components/Contrast";
 
 // References for each section on the page
 
@@ -23,6 +23,12 @@ const Restore: NextPage = () => {
       
       <RestoreHeader />
       <Demo />
+
+      
+
+      <div id="support"className="" style={{top : 'px'}}>
+        <Contrast />
+      </div>
 
       <div id="contact">
         <Testimonials />

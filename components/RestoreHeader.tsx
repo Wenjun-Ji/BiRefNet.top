@@ -22,11 +22,12 @@ const Header: React.FC = () => {
   const examplesRef = useRef<HTMLDivElement>(null);
   const applicationsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const contrastRef = useRef<HTMLDivElement>(null);
+  const testimonialsRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
-    { label: "Applications", href: "#applications", ref: applicationsRef },
-    { label: "Contact", href: "#contact", ref: contactRef },
-    
+    { label: "Contrast", href: "#Contrast", ref: contrastRef },
+    { label: "Testimonials", href: "#testimonials", ref: testimonialsRef },
   ];
 
   const handleIntersection = useCallback(
@@ -105,7 +106,7 @@ const Header: React.FC = () => {
               href="/segment"
               className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
             >
-              Start
+              Contact us
             </Link>
           </NavbarItem>
         </div>
