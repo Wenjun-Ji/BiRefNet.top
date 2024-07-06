@@ -11,11 +11,11 @@
   }
   
   .scrollLeft {
-	animation: scrollLeft 40s linear infinite;
+	animation: scrollLeft 80s linear infinite;
   }
   
   .scrollRight {
-	animation: scrollRight 40s linear infinite;
+	animation: scrollRight 80s linear infinite;
   }
   
   .carouselSlide {
@@ -35,19 +35,25 @@
   
   @keyframes scrollLeft {
 	0% {
-	  transform: translateX(0);
+	  transform: translateX(-25%);
+	}
+	50% {
+	  transform: translateX(-75%);
 	}
 	100% {
-	  transform: translateX(-100%);
+		transform: translateX(-25%);
 	}
   }
   
   @keyframes scrollRight {
 	0% {
-	  transform: translateX(-100%);
+	  transform: translateX(-75%);
+	}
+	50% {
+	  transform: translateX(-25%);
 	}
 	100% {
-	  transform: translateX(0);
+		transform: translateX(-75%);
 	}
   }
   
