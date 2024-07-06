@@ -27,7 +27,9 @@ const options = {
     let isSafe = false;
     try {
       isSafe = await NSFWPredictor.isSafeImg(file);
-      if (!isSafe) va.track("NSFW Image blocked");
+      if (!isSafe)
+      // va.track("NSFW Image blocked");
+      console.log("NSFW Image blocked");
     } catch (error) {
       console.error("NSFW predictor threw an error", error);
     }
