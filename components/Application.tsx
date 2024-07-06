@@ -83,11 +83,8 @@ const Application: React.FC = () => {
 
   return (
     <div className="mt-16">
-      <h2 className="text-3xl font-bold mb-6 text-center">
-        Applications
-      </h2>
-      <h3 className="text-2xl font-semibold mb-4 text-center">Light Applications</h3>
-      <div className="flex flex-wrap justify-center gap-6 p-6">
+      <h3 className="text-5xl font-semibold mb-4 text-center">Light Applications</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {lightCards.map((card, index) => (
           <CustomCard
             key={index}
@@ -98,8 +95,8 @@ const Application: React.FC = () => {
           />
         ))}
       </div>
-      <h3 className="text-2xl font-semibold mb-4 text-center mt-8">Heavy Applications</h3>
-      <div className="flex flex-wrap justify-center gap-6 p-6">
+      <h3 className="text-5xl font-semibold mb-4 text-center mt-8">Heavy Applications</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {heavyCards.map((card, index) => (
           <CustomCard
             key={index}
