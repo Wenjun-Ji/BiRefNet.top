@@ -11,38 +11,38 @@ interface ImageData {
 const PictureBox: React.FC = () => {
   const imageData: ImageData[] = [
     {
-      original: '/PictureBox/17.jpg',
-      modified: '/PictureBox/17-after.png',
+      original: '/PictureBox/1.jpg',
+      modified: '/PictureBox/1.png',
       title: 'Salient Object Detection',
       desc: 'Instantly identify and isolate the most important objects in your images. Our advanced algorithms pinpoint the key elements, making it easy to focus on what matters most.'
     },
     {
-      original: 'PictureBox/4.jpg',
-      modified: 'PictureBox/4-after.png',
+      original: 'PictureBox/2.jpg',
+      modified: 'PictureBox/2.png',
       title: 'Camouflage Object Detection', 
       desc: 'Unmask the hidden! Our technology effortlessly detects objects cleverly concealed within complex backgrounds, revealing what others might miss.'
     },
     {
-      original: 'PictureBox/11.jpg',
-      modified: 'PictureBox/11-after.png',
+      original: 'PictureBox/3.jpg',
+      modified: 'PictureBox/3.png',
       title: 'Meticulous Object Detection',
       desc: 'Experience precision like never before. Our object detection system pinpoints even the smallest details, ensuring every element is accurately identified and separated.'
     },
     {
-      original: '/PictureBox/17.jpg',
-      modified: '/PictureBox/17-after.png',
+      original: '/PictureBox/4.jpg',
+      modified: '/PictureBox/4.png',
       title: 'Salient Object Detection',
       desc: 'Instantly identify and isolate the most important objects in your images. Our advanced algorithms pinpoint the key elements, making it easy to focus on what matters most.'
     },
     {
-      original: 'PictureBox/4.jpg',
-      modified: 'PictureBox/4-after.png',
+      original: 'PictureBox/5.jpg',
+      modified: 'PictureBox/5.png',
       title: 'Camouflage Object Detection', 
       desc: 'Unmask the hidden! Our technology effortlessly detects objects cleverly concealed within complex backgrounds, revealing what others might miss.'
     },
     {
-      original: 'PictureBox/11.jpg',
-      modified: 'PictureBox/11-after.png',
+      original: 'PictureBox/6.jpg',
+      modified: 'PictureBox/6.png',
       title: 'Meticulous Object Detection',
       desc: 'Experience precision like never before. Our object detection system pinpoints even the smallest details, ensuring every element is accurately identified and separated.'
     },

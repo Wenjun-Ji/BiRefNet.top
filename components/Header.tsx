@@ -24,7 +24,6 @@ const Header: React.FC = () => {
   const testimonialsRef = useRef<HTMLDivElement>(null);
   const businessRef = useRef<HTMLDivElement>(null);
 
-
   const menuItems = [
     { label: "Support", href: "#support", ref: supportRef },
     { label: "Video", href: "#video", ref: videoRef },
@@ -80,7 +79,9 @@ const Header: React.FC = () => {
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">BiRefNet</p>
+          <Link href="/">
+            <p className="font-bold text-black">BiRefNet</p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -88,7 +89,9 @@ const Header: React.FC = () => {
         <div className="flex items-center">
           <NavbarBrand>
             <AcmeLogo />
-            <p className="font-bold text-inherit">BiRefNet</p>
+            <Link href="/">
+              <p className="font-bold text-black">BiRefNet</p>
+            </Link>
           </NavbarBrand>
         </div>
         <div className="flex items-center justify-center flex-grow gap-4">

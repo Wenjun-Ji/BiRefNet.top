@@ -16,12 +16,6 @@ const Header: React.FC = () => {
   const [activeLink, setActiveLink] = useState(""); // State to track active link
 
   // References for each section on the page
-  const supportRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLDivElement>(null);
-  const featuresRef = useRef<HTMLDivElement>(null);
-  const examplesRef = useRef<HTMLDivElement>(null);
-  const applicationsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
   const contrastRef = useRef<HTMLDivElement>(null);
   const testimonialsRef = useRef<HTMLDivElement>(null);
 
@@ -76,15 +70,20 @@ const Header: React.FC = () => {
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">BiRefNet</p>
+          <Link href="/">
+            <p className="font-bold text-black">BiRefNet</p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex justify-between w-full">
         <div className="flex items-center">
           <NavbarBrand>
+            
             <AcmeLogo />
-            <p className="font-bold text-inherit">BiRefNet</p>
+            <Link href="/">
+              <p className="font-bold text-black">BiRefNet</p>
+            </Link>
           </NavbarBrand>
         </div>
         <div className="flex items-center justify-center flex-grow gap-4">
