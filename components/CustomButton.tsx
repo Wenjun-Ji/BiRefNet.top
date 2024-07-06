@@ -25,13 +25,13 @@ const CustomButton: React.FC<CustomButtonProps> = ({ text }) => {
     // 小延迟以确保纸屑效果被触发
     setTimeout(() => {
       router.push('/segment');
-    }, 300);
+    }, 30);
   };
 
   return (
     <Button
       disableRipple
-      className="relative overflow-visible rounded-full hover:-translate-y-1 px-12 py-10 shadow-xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-opacity-70 hover:bg-opacity-70 text-white after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/15 after:z-[-1] after:transition after:!duration-500 hover:after:scale-150 hover:after:opacity-0"
+      className="relative overflow-visible rounded-full hover:-translate-y-1 px-8 py-6 shadow-xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-opacity-40 hover:bg-opacity-50 text-white after:content-[''] after:absolute after:rounded-full after:inset-0 after:bg-background/15 after:z-[-1] after:transition after:!duration-500 hover:after:scale-150 hover:after:opacity-0"
       size="lg"
       onClick={handleClick}
     >

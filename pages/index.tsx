@@ -50,9 +50,7 @@ const Home: NextPage = () => {
     <div className="relative-container relative">
       <ImageCarousel images={leftImages} direction="left" /> 
       <ImageCarousel images={rightImages} direction="right" />
-      <div className="absolute top-3/4 left-1/2 transform -translate-x-1/2 z-10 mt-10">
-        <CustomButton text="Try BirefNet Now 🥰" />
-      </div>
+      
       <TextTiltAnimation />
     </div>
 
