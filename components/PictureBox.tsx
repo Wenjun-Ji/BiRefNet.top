@@ -51,7 +51,7 @@ const PictureBox: React.FC = () => {
   ];
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl font-bold mb-6 text-center">
+      <h2 className="text-5xl font-bold mb-12 text-center relative" style={{ top: '-30px'}}>
         Explore More Product Features
       </h2>
       <div className="grid grid-cols-3 gap-4 w-4/5 mx-auto">

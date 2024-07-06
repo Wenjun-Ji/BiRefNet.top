@@ -13,7 +13,7 @@ const TextTiltAnimation: React.FC = () => {
         { y: 0, rotation: 0, opacity: 1, duration: 2, ease: "power4.out", stagger: 0.02 }
       );
 
-      const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, delay: 2 }); // 开始后续动画后给第一行文字一点时间
+      const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, delay: 2 }); 
 
       const charsline2 = texts[1].querySelectorAll(`.${styles.char}`);
       tl.fromTo(charsline2,

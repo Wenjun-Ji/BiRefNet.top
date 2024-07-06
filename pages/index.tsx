@@ -41,34 +41,32 @@ const Home: NextPage = () => {
   const contactRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
-      <Head>
-        <title>General Scenario Intelligent High-precision Parsing</title>
-      </Head>
+      <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
+        <Head>
+          <title>General Scenario Intelligent High-precision Parsing</title>
+        </Head>
       <Header />
 
-    <div className="relative-container relative">
-      <ImageCarousel images={leftImages} direction="left" /> 
-      <ImageCarousel images={rightImages} direction="right" />
-      
-      <TextTiltAnimation />
-    </div>
-
-
-
-      <div id="support" ref={supportRef} className="mt-40">
-        <Support />
+      <div className="relative-container relative">
+        <ImageCarousel images={leftImages} direction="left" /> 
+        <ImageCarousel images={rightImages} direction="right" />
+        <TextTiltAnimation />
       </div>
 
       <div id="video" ref={videoRef}> 
         <Features /> 
       </div>
 
-      <div id="features" ref={featuresRef}>
-        <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
-        <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
-        <CallToActionR imageSrc="/CallToAction/17.jpg" imageAlt="flower" />
-        <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Bridge" />
+	  <div id="support" ref={supportRef} className="mt-40">
+        <Support />
+      </div>
+
+
+      <div id="features" ref={featuresRef} className="relative" style={{top : '-150px'}}>
+        <CallToActionR imageSrc="/CallToAction/12.jpg"  />
+        <CallToActionL imageSrc="/CallToAction/12.jpg"  />
+        <CallToActionR imageSrc="/CallToAction/12.jpg" />
+        <CallToActionL imageSrc="/CallToAction/12.jpg"  />
       </div>
 
       <div id="picturebox" ref={examplesRef}>
