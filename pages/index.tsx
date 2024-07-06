@@ -39,6 +39,7 @@ const Home: NextPage = () => {
   const examplesRef = useRef<HTMLDivElement>(null);
   const applicationsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const businessRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
@@ -89,8 +90,10 @@ const Home: NextPage = () => {
       <div id="applications" ref={applicationsRef}>
         <Application />
       </div>
-
-      <Business />
+      
+      <div id="business" ref={businessRef}>
+        <Business />
+      </div>
 
       <Footer />
     </div>

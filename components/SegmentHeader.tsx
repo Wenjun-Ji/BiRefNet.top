@@ -9,18 +9,20 @@ import {
   NavbarItem,
   Link,
 } from "@nextui-org/react";
-import { AcmeLogo } from "../components/AcmeLogo";
+import { AcmeLogo } from "./AcmeLogo";
 
-const Header: React.FC = () => {
+const SegmentHeader: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(""); // State to track active link
 
   // References for each section on the page
   const contrastRef = useRef<HTMLDivElement>(null);
   const testimonialsRef = useRef<HTMLDivElement>(null);
+  const demoRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
-    { label: "Contrast", href: "#Contrast", ref: contrastRef },
+    { label: "Demo", href: "#demo", ref: demoRef },
+    { label: "Contrast", href: "#contrast", ref: contrastRef },
     { label: "Testimonials", href: "#testimonials", ref: testimonialsRef },
   ];
 
@@ -135,4 +137,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default SegmentHeader;

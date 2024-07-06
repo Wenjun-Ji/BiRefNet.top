@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import Footer from "../components/Footer";
-import RestoreHeader from "../components/RestoreHeader";
+import RestoreHeader from "../components/SegmentHeader";
 import Demo from "../components/Demo";
 import Application from "../components/Application";
 import CallToActionR from "../components/CallToActionR";
@@ -10,6 +10,7 @@ import { useRef } from "react";
 import Testimonials from "../components/Testimonials";
 import Business from "../components/Business";
 import Contrast from "../components/Contrast";
+import SegmentHeader from "../components/SegmentHeader";
 
 // References for each section on the page
 
@@ -21,12 +22,14 @@ const Restore: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <RestoreHeader />
-      <Demo />
+      <SegmentHeader />
 
+      <div id="demo">
+      <Demo />
+      </div>
       
 
-      <div id="support"className="" style={{top : 'px'}}>
+      <div id="contrast" className="" style={{top : 'px'}}>
         <Contrast />
       </div>
 
