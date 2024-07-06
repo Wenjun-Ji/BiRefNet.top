@@ -1,24 +1,18 @@
 export default function Support() {
 	return (
-	  <div className="px-4 sm:px-6 md:px-8 xl:px-10 py-6 relative" data-translation-key="096bfd3f-eb44-4a5b-835f-37cea7979919" style={{ top: '-250px' }}>
+	  <div className="px-4 sm:px-6 md:px-8 xl:px-10 py-6 relative" data-translation-key="096bfd3f-eb44-4a5b-835f-37cea7979919" style={{ top: '30px' }}>
 		<div className="mx-auto max-w-[1200px]">
 
 
-
-		<div className="text-center text-content-primary mb-4" style={{ fontSize: '28px' }}>
- 		 <h1>本产品由以下技术支持</h1>
-		</div>
-
-
 		  <div className="mt-4 text-gray-600 text-center">
-			<p className="mb-2 text-4xl">
+			<p className="mb-4 text-5xl">
 			  Title: 
 			  <a href="https://arxiv.org/pdf/2401.03407.pdf" target="_blank" rel="noopener noreferrer" className="text-black-500 hover:underline">
 				Bilateral Reference for High-Resolution Dichotomous Image Segmentation
 			  </a>{""} (arXiv 2024).
 			</p>
 
-			<p>
+			<p className="mb-2 text-2xl">
 			  Authors: 
 			  <a href="https://scholar.google.com/citations?user=TZRzWOsAAAAJ" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
 				Peng Zheng

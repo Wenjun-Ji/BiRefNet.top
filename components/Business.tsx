@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody, CardFooter, Image, Button } from "@nextui-o
 export default function Business() {
   return (
     <div className="max-w-[900px] mx-auto px-8">
-      <h2 className="text-2xl font-bold text-center my-4">Business Collaborations</h2>
+      <h3 className="text-5xl font-semibold mb-4 text-center">Business Collaborations</h3>
       <div className="gap-2 grid grid-cols-12">
         <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-6">
           <CardHeader className="absolute z-10 top-1 flex-col items-start">

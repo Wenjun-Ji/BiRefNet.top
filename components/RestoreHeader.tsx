@@ -24,10 +24,9 @@ const Header: React.FC = () => {
   const contactRef = useRef<HTMLDivElement>(null);
 
   const menuItems = [
-    { label: "Video", href: "#video", ref: videoRef },
-    { label: "Features", href: "#features", ref: featuresRef },
     { label: "Applications", href: "#applications", ref: applicationsRef },
     { label: "Contact", href: "#contact", ref: contactRef },
+    
   ];
 
   const handleIntersection = useCallback(

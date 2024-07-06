@@ -51,8 +51,8 @@ const PictureBox: React.FC = () => {
   ];
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-5xl font-bold mb-12 text-center relative" style={{ top: '-30px'}}>
-        Explore More Product Features
+      <h2 className="text-5xl font-bold mb-12 text-center relative" style={{ top: '-10px'}}>
+          Discover the Power of Our Model
       </h2>
       <div className="grid grid-cols-3 gap-4 w-4/5 mx-auto">
         {imageData.slice(0, 9).map((item, index) => (

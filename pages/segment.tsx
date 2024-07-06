@@ -7,8 +7,11 @@ import Application from "../components/Application";
 import CallToActionR from "../components/CallToActionR";
 import CallToActionL from "../components/CallToActionL";
 import { useRef } from "react";
+import Testimonials from "../components/Testimonials";
+import Business from "../components/Business";
 
-  // References for each section on the page
+
+// References for each section on the page
 
 const Restore: NextPage = () => {
   return (
@@ -20,16 +23,9 @@ const Restore: NextPage = () => {
       
       <RestoreHeader />
       <Demo />
-      
-      <div id="features">
-        <CallToActionR imageSrc="/CallToAction/12.jpg" imageAlt="Bridge" />
-        <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Animal fox" />
-        <CallToActionR imageSrc="/CallToAction/17.jpg" imageAlt="flower" />
-        <CallToActionL imageSrc="/CallToAction/1.jpg" imageAlt="Bridge" />
-      </div>
 
-      <div id="applications">
-        <Application />
+      <div id="contact">
+        <Testimonials />
       </div>
 
       <Footer />

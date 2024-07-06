@@ -53,16 +53,15 @@ const Home: NextPage = () => {
         <TextTiltAnimation />
       </div>
 
+      <div id="support" ref={supportRef} className="" style={{top : '100px'}}>
+        <Support />
+      </div>
+
       <div id="video" ref={videoRef}> 
         <Features /> 
       </div>
 
-	  <div id="support" ref={supportRef} className="mt-40">
-        <Support />
-      </div>
-
-
-      <div id="features" ref={featuresRef} className="relative" style={{top : '-150px'}}>
+      <div id="features" ref={featuresRef} className="relative" style={{top : '-20px'}}>
         <CallToActionR imageSrc="/CallToAction/12.jpg"  />
         <CallToActionL imageSrc="/CallToAction/12.jpg"  />
         <CallToActionR imageSrc="/CallToAction/12.jpg" />
@@ -73,17 +72,12 @@ const Home: NextPage = () => {
         <PictureBox />
       </div>
 
-      <div id="contact" ref={contactRef}>
-        <Testimonials />
-      </div>
       
       <div id="applications" ref={applicationsRef}>
         <Application />
       </div>
 
       <Business/>
-
-      <Answer/>
 
       <Footer />
     </div>
