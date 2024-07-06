@@ -39,9 +39,9 @@ const options = {
 
 const Demo = () => {
   const [originalPhoto, setOriginalPhoto] = useState<string | null>(null);
-  const [restoredImage, setRestoredImage] = useState<string | null>(null);
+  const [segmentedImage, setsegmentedImage] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
-  const [restoredLoaded, setRestoredLoaded] = useState<boolean>(false);
+  const [segmentedLoaded, setsegmentedLoaded] = useState<boolean>(false);
   const [sideBySide, setSideBySide] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [photoName, setPhotoName] = useState<string | null>(null);
@@ -77,14 +77,14 @@ const Demo = () => {
     if (res.status !== 200) {
       setError(newPhoto);
     } else {
-      setRestoredImage(newPhoto);
+      setsegmentedImage(newPhoto);
     }
     setLoading(false);
   }
 
   return (
     <div className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
-      <a
+      {/* <a
         href="https://youtu.be/FRQtFDDrUXQ"
         target="_blank"
         rel="noreferrer"
@@ -92,7 +92,7 @@ const Demo = () => {
       >
         Are you a developer and want to learn how I built this? Watch the{" "}
         <span className="font-bold">YouTube tutorial</span>.
-      </a>
+      </a> */}
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5">
         Dichotomous Segmentation
         <br />
@@ -107,48 +107,48 @@ const Demo = () => {
       <AnimatePresence mode="wait">
         <motion.div className="flex justify-between items-center w-full flex-col mt-4">
           <Toggle
-            className={`${restoredLoaded ? "visible" : "invisible"} mb-6`}
+            className={`${segmentedLoaded ? "visible" : "invisible"} mb-6`}
             sideBySide={sideBySide}
             setSideBySide={(newVal) => setSideBySide(newVal)}
           />
-          {restoredLoaded && sideBySide && (
+          {segmentedLoaded && sideBySide && (
             <CompareSlider
               original={originalPhoto!}
-              restored={restoredImage!}
+              segmented={segmentedImage!}
             />
           )}
           {!originalPhoto && <UploadDropZone />}
-          {originalPhoto && !restoredImage && (
+          {originalPhoto && !segmentedImage && (
             <Image
               alt="original photo"
               src={originalPhoto}
-              className="rounded-2xl"
+              className="rounded-2xl shadow-md"
               width={475}
               height={475}
             />
           )}
-          {restoredImage && originalPhoto && !sideBySide && (
+          {segmentedImage && originalPhoto && !sideBySide && (
             <div className="flex sm:space-x-4 sm:flex-row flex-col">
               <div>
-                <h2 className="mb-1 font-medium text-lg">Original Photo</h2>
+                <h2 className="mb-1 font-medium text-lg">Original Image</h2>
                 <Image
                   alt="original photo"
                   src={originalPhoto}
-                  className="rounded-2xl relative"
+                  className="rounded-2xl relative shadow-md"
                   width={475}
                   height={475}
                 />
               </div>
               <div className="sm:mt-0 mt-8">
-                <h2 className="mb-1 font-medium text-lg">Restored Photo</h2>
-                <a href={restoredImage} target="_blank" rel="noreferrer">
+                <h2 className="mb-1 font-medium text-lg">Segmented Image</h2>
+                <a href={segmentedImage} target="_blank" rel="noreferrer">
                   <Image
-                    alt="restored photo"
-                    src={restoredImage}
-                    className="rounded-2xl relative sm:mt-0 mt-2 cursor-zoom-in"
+                    alt="segmented photo"
+                    src={segmentedImage}
+                    className="rounded-2xl relative sm:mt-0 mt-2 cursor-zoom-in shadow-md"
                     width={475}
                     height={475}
-                    onLoadingComplete={() => setRestoredLoaded(true)}
+                    onLoadingComplete={() => setsegmentedLoaded(true)}
                   />
                 </a>
               </div>
@@ -177,8 +177,8 @@ const Demo = () => {
               <button
                 onClick={() => {
                   setOriginalPhoto(null);
-                  setRestoredImage(null);
-                  setRestoredLoaded(false);
+                  setsegmentedImage(null);
+                  setsegmentedLoaded(false);
                   setError(null);
                 }}
                 className="bg-black rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-black/80 transition"
@@ -186,14 +186,14 @@ const Demo = () => {
                 Upload New Photo
               </button>
             )}
-            {restoredLoaded && (
+            {segmentedLoaded && (
               <button
                 onClick={() => {
-                  downloadPhoto(restoredImage!, appendNewToName(photoName!));
+                  downloadPhoto(segmentedImage!, appendNewToName(photoName!));
                 }}
                 className="bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition"
               >
-                Download Restored Photo
+                Download segmented Photo
               </button>
             )}
           </div>
