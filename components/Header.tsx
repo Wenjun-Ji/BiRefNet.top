@@ -94,6 +94,16 @@ const Header: React.FC = () => {
             </Link>
           </NavbarBrand>
         </div>
+        <div className="flex items-center">
+          <NavbarItem className="ml-4">
+            <Link
+              href="/segment"
+              className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
+            >
+              Start
+            </Link>
+          </NavbarItem>
+        </div>
         <div className="flex items-center justify-center flex-grow gap-4">
           {menuItems.map((item, index) => (
             <NavbarItem key={`${item.label}-${index}`}>
@@ -106,16 +116,6 @@ const Header: React.FC = () => {
               </Link>
             </NavbarItem>
           ))}
-        </div>
-        <div className="flex items-center">
-          <NavbarItem className="ml-4">
-            <Link
-              href="/segment"
-              className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
-            >
-              Start
-            </Link>
-          </NavbarItem>
         </div>
       </NavbarContent>
 
