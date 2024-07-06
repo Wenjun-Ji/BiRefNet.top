@@ -92,6 +92,7 @@ const Home: NextPage = () => {
       <div id="business" ref={businessRef}>
         <Business />
       </div>
+      <Analytics />
       <SpeedInsights />
       <Footer />
     </div>
