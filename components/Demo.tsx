@@ -46,6 +46,20 @@ const Demo = () => {
   const [error, setError] = useState<string | null>(null);
   const [photoName, setPhotoName] = useState<string | null>(null);
 
+  const sampleImages = [
+    "/Demo/cat.jpg",
+    "/Demo/crossbow.jpg",
+    "/Demo/tennis_racket.jpg",
+    "/Demo/ground.jpg",
+  ];
+
+  const localSegmentedImages: { [key: string]: string } = {
+    "/Demo/cat.jpg": "/Demo/seg/cat.png",
+    "/Demo/crossbow.jpg": "/Demo/seg/crossbow.png",
+    "/Demo/tennis_racket.jpg": "/Demo/seg/tennis_racket.png",
+    "/Demo/ground.jpg": "/Demo/seg/ground.png",
+  };
+
   const UploadDropZone = () => (
     <UploadDropzone
       uploader={uploader}
@@ -82,27 +96,20 @@ const Demo = () => {
     setLoading(false);
   }
 
+  const handleSampleClick = (sampleUrl: string) => {
+    setOriginalPhoto(sampleUrl);
+    setsegmentedImage(localSegmentedImages[sampleUrl]); // Set segmented image to corresponding local image
+  };
+
   return (
     <div className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
-      {/* <a
-        href="https://youtu.be/FRQtFDDrUXQ"
-        target="_blank"
-        rel="noreferrer"
-        className="border rounded-2xl py-1 px-4 text-slate-500 text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out"
-      >
-        Are you a developer and want to learn how I built this? Watch the{" "}
-        <span className="font-bold">YouTube tutorial</span>.
-      </a> */}
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5">
         Dichotomous Segmentation
         <br />
         any photo
       </h1>
       <p className="text-slate-500">
-        {" "}
-        {/* Obtained this number from Vercel: based on how many serverless invocations happened. */}
-        <CountUp start={100000} end={325321} duration={2} separator="," />{" "}
-        photos generated and counting.
+        <CountUp start={100000} end={325321} duration={2} separator="," /> photos generated and counting.
       </p>
       <AnimatePresence mode="wait">
         <motion.div className="flex justify-between items-center w-full flex-col mt-4">
@@ -111,13 +118,30 @@ const Demo = () => {
             sideBySide={sideBySide}
             setSideBySide={(newVal) => setSideBySide(newVal)}
           />
-          {segmentedLoaded && sideBySide && (
-            <CompareSlider
-              original={originalPhoto!}
-              segmented={segmentedImage!}
-            />
-          )}
           {!originalPhoto && <UploadDropZone />}
+          {!originalPhoto && (
+            <div className="mt-4">
+              <h2 className="mb-2 font-medium text-lg">Sample Images</h2>
+              <div className="flex space-x-4 justify-center">
+                {sampleImages.map((url, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ y: -10 }}
+                    className="cursor-pointer"
+                    onClick={() => handleSampleClick(url)}
+                  >
+                    <Image
+                      src={url}
+                      alt={`Sample ${index + 1}`}
+                      className="rounded-2xl shadow-md"
+                      width={100}
+                      height={100}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
           {originalPhoto && !segmentedImage && (
             <Image
               alt="original photo"
@@ -125,6 +149,12 @@ const Demo = () => {
               className="rounded-2xl shadow-md"
               width={475}
               height={475}
+            />
+          )}
+          {segmentedImage && originalPhoto && sideBySide && (
+            <CompareSlider
+              original={originalPhoto!}
+              segmented={segmentedImage!}
             />
           )}
           {segmentedImage && originalPhoto && !sideBySide && (
@@ -179,6 +209,7 @@ const Demo = () => {
                   setOriginalPhoto(null);
                   setsegmentedImage(null);
                   setsegmentedLoaded(false);
+                  setSideBySide(false);
                   setError(null);
                 }}
                 className="bg-black rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-black/80 transition"
