@@ -25,6 +25,7 @@
   display: inline-block;
 }
 
+
 /* 使用媒体查询进一步调整小屏幕下的字体大小 */
 @media (max-width: 576px) {
   .text {
@@ -37,3 +38,5 @@
     font-size: clamp(1rem, 5vw, 2rem);
   }
 }
+
+

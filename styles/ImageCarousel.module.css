@@ -1,7 +1,8 @@
 .carouselContainer {
 	overflow: hidden;
-	width: 100%; /* 占据整个页面宽度 */
+	width: 100%;
 	position: relative;
+	top: 40px;
   }
   
   .carouselTrack {
@@ -50,15 +51,4 @@
 	}
   }
   
-  .carouselButton {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 10; /* 确保按钮在图片上方 */
-  }
-  
-  .transition-opacity {
-	transition: opacity 0.3s ease;
-  }
   
