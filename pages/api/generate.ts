@@ -2,7 +2,7 @@ import { Ratelimit } from "@upstash/ratelimit";
 import type { NextApiRequest, NextApiResponse } from "next";
 import requestIp from "request-ip";
 import redis from "../../utils/redis";
-
+export const maxDuration = 300
 type Data = string;
 interface ExtendedNextApiRequest extends NextApiRequest {
   body: {
