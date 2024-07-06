@@ -41,19 +41,19 @@ const Home: NextPage = () => {
   const contactRef = useRef<HTMLDivElement>(null);
 
   return (
-      <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
-        <Head>
-          <title>General Scenario Intelligent High-precision Parsing</title>
-        </Head>
+    <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
+      <Head>
+        <title>General Scenario Intelligent High-precision Parsing</title>
+      </Head>
       <Header />
 
-      <div className="relative-container relative" style={{top : '-40px'}}>
+      <div className="relative-container relative" style={{top: '-40px'}}>
         <ImageCarousel images={leftImages} direction="left" /> 
         <ImageCarousel images={rightImages} direction="right" />
         <TextTiltAnimation />
       </div>
 
-      <div id="support" ref={supportRef} className="" style={{top : '100px'}}>
+      <div id="support" ref={supportRef} className="" style={{top: '100px'}}>
         <Support />
       </div>
 
@@ -61,23 +61,36 @@ const Home: NextPage = () => {
         <Features /> 
       </div>
 
-      <div id="features" ref={featuresRef} className="relative" style={{top : '-20px'}}>
-        <CallToActionR imageSrc="/CallToAction/12.jpg"  />
-        <CallToActionL imageSrc="/CallToAction/12.jpg"  />
-        <CallToActionR imageSrc="/CallToAction/12.jpg" />
-        <CallToActionL imageSrc="/CallToAction/12.jpg"  />
+      <div id="features" ref={featuresRef} className="relative" style={{top: '-20px'}}>
+        <CallToActionR 
+          mediaSrc="/CallToAction/2_transition.mp4" 
+          title="High-precision Segmentation" 
+          content="Achieve highly accurate image segmentation with our state-of-the-art technology. Perfect for medical imaging, autonomous vehicles, and more. 📊🔍" 
+          buttonText="Learn More"
+        />
+        <CallToActionL 
+          mediaSrc="/CallToAction/5_transition.mp4" 
+          title="Camouflaged Objects" 
+          content="Effectively detect and segment camouflaged objects in various environments using our advanced algorithms. Ideal for wildlife monitoring and surveillance. 🌲🦎🔬" 
+          buttonText="Discover Now"
+        />
+        <CallToActionR 
+          mediaSrc="/CallToAction/14_16_transition.mp4" 
+          title="Industrial Detection" 
+          content="Experience robust and precise detection and segmentation for industrial applications. Ensure high efficiency and accuracy in your processes with our solutions. 🏭📈🛠️" 
+          buttonText="Explore Solutions"
+        />
       </div>
 
       <div id="picturebox" ref={examplesRef}>
         <PictureBox />
       </div>
 
-      
       <div id="applications" ref={applicationsRef}>
         <Application />
       </div>
 
-      <Business/>
+      <Business />
 
       <Footer />
     </div>
