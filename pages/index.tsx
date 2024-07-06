@@ -12,6 +12,7 @@ import CallToActionR from "../components/CallToActionR";
 import Application from "../components/Application";
 import { useRef } from "react";
 import Business from "../components/Business";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const Home: NextPage = () => {
   const leftImages = [
@@ -90,7 +91,7 @@ const Home: NextPage = () => {
       <div id="business" ref={businessRef}>
         <Business />
       </div>
-
+      <SpeedInsights />
       <Footer />
     </div>
   );
