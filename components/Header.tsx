@@ -21,7 +21,9 @@ const Header: React.FC = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
   const examplesRef = useRef<HTMLDivElement>(null);
   const applicationsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+  const businessRef = useRef<HTMLDivElement>(null);
+
 
   const menuItems = [
     { label: "Support", href: "#support", ref: supportRef },
@@ -29,7 +31,7 @@ const Header: React.FC = () => {
     { label: "Features", href: "#features", ref: featuresRef },
     { label: "Examples", href: "#picturebox", ref: examplesRef },
     { label: "Applications", href: "#applications", ref: applicationsRef },
-    { label: "Contact", href: "#contact", ref: contactRef },
+    { label: "Business", href: "#business", ref: businessRef },
   ];
 
   const handleIntersection = useCallback(

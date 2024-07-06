@@ -15,7 +15,7 @@ import { useRef } from "react";
 import Answer from "../components/Answer";
 import Link from "next/link";
 import CustomButton from "../components/CustomButton";
-
+import Business from "../components/Business";
 
 const Home: NextPage = () => {
   const leftImages = [
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
     <div className="relative-container relative">
       <ImageCarousel images={leftImages} direction="left" /> 
       <ImageCarousel images={rightImages} direction="right" />
-      
+    
       <TextTiltAnimation />
     </div>
 
@@ -78,11 +78,12 @@ const Home: NextPage = () => {
       <div id="contact" ref={contactRef}>
         <Testimonials />
       </div>
-
       
       <div id="applications" ref={applicationsRef}>
         <Application />
       </div>
+
+      <Business/>
 
       <Answer/>
 
