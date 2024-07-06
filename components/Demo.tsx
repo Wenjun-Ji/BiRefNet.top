@@ -47,14 +47,14 @@ const Demo = () => {
   const [photoName, setPhotoName] = useState<string | null>(null);
 
   const sampleImages = [
-    "/Demo/cat.jpg",
+    "/Demo/fox.jpg",
     "/Demo/crossbow.jpg",
     "/Demo/tennis_racket.jpg",
     "/Demo/ground.jpg",
   ];
 
   const localSegmentedImages: { [key: string]: string } = {
-    "/Demo/cat.jpg": "/Demo/seg/cat.png",
+    "/Demo/fox.jpg": "/Demo/seg/fox.png",
     "/Demo/crossbow.jpg": "/Demo/seg/crossbow.png",
     "/Demo/tennis_racket.jpg": "/Demo/seg/tennis_racket.png",
     "/Demo/ground.jpg": "/Demo/seg/ground.png",
@@ -98,7 +98,8 @@ const Demo = () => {
 
   const handleSampleClick = (sampleUrl: string) => {
     setOriginalPhoto(sampleUrl);
-    setsegmentedImage(localSegmentedImages[sampleUrl]); // Set segmented image to corresponding local image
+    setsegmentedImage(localSegmentedImages[sampleUrl]);
+    setPhotoName(sampleUrl.split('/').pop() || "sample"); // Extract file name from URL or use 'sample'
   };
 
   return (
@@ -106,7 +107,7 @@ const Demo = () => {
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5">
         Dichotomous Segmentation
         <br />
-        any photo
+        Any Photo
       </h1>
       <p className="text-slate-500">
         <CountUp start={100000} end={325321} duration={2} separator="," /> photos generated and counting.
@@ -129,13 +130,14 @@ const Demo = () => {
                     whileHover={{ y: -10 }}
                     className="cursor-pointer"
                     onClick={() => handleSampleClick(url)}
+                    style={{ width: 100, height: 100, position: 'relative' }}
                   >
                     <Image
                       src={url}
                       alt={`Sample ${index + 1}`}
                       className="rounded-2xl shadow-md"
-                      width={100}
-                      height={100}
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'center' }}
                     />
                   </motion.div>
                 ))}
@@ -220,7 +222,9 @@ const Demo = () => {
             {segmentedLoaded && (
               <button
                 onClick={() => {
-                  downloadPhoto(segmentedImage!, appendNewToName(photoName!));
+                  if (photoName) {
+                    downloadPhoto(segmentedImage!, appendNewToName(photoName));
+                  }
                 }}
                 className="bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition"
               >
