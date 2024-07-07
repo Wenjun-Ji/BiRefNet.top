@@ -17,12 +17,11 @@ const Restore: NextPage = () => {
       
       <SegmentHeader />
 
-      <div id="demo">
-      <Demo />
+      <div id="demo" className="w-full px-4 sm:px-6 lg:px-8">
+        <Demo />
       </div>
       
-
-      <div id="contrast" className="" style={{top : 'px'}}>
+      <div id="contrast" className="w-full px-4 sm:px-6 lg:px-8 mt-4">
         <Contrast />
       </div>
 

@@ -73,16 +73,21 @@ const Header: React.FC = () => {
   return (
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-      </NavbarContent>
-
-      <NavbarContent className="sm:hidden pr-3" justify="center">
-        <NavbarBrand>
+        <NavbarBrand className="flex items-center">
           <AcmeLogo />
           <Link href="/">
-            <p className="font-bold text-black">BiRefNet</p>
+            <p className="font-bold text-black ml-2">BiRefNet</p>
           </Link>
         </NavbarBrand>
+        <Link
+          href="/segment"
+          className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out ml-4"
+        >
+          Start
+        </Link>
+      </NavbarContent>
+      <NavbarContent className="sm:hidden" justify="end">
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex justify-between w-full">
@@ -94,19 +99,6 @@ const Header: React.FC = () => {
             </Link>
           </NavbarBrand>
         </div>
-        <div className="flex items-center justify-center flex-grow gap-4">
-          {menuItems.map((item, index) => (
-            <NavbarItem key={`${item.label}-${index}`}>
-              <Link
-                color="foreground"
-                href={item.href}
-                className={`font-bold px-3 py-2 rounded-md hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out ${activeLink === item.label ? "text-warning" : ""}`}
-              >
-                {item.label}
-              </Link>
-            </NavbarItem>
-          ))}
-        </div>
         <div className="flex items-center">
           <NavbarItem className="ml-4">
             <Link
@@ -116,6 +108,21 @@ const Header: React.FC = () => {
               Start
             </Link>
           </NavbarItem>
+        </div>
+        <div className="flex items-center justify-center flex-grow gap-4">
+          {menuItems.map((item, index) => (
+            <NavbarItem key={`${item.label}-${index}`}>
+              <Link
+                color="foreground"
+                href={item.href}
+                className={`font-bold px-3 py-2 rounded-md hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out ${
+                  activeLink === item.label ? "text-warning" : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            </NavbarItem>
+          ))}
         </div>
       </NavbarContent>
 
