@@ -12,7 +12,7 @@ import CallToActionR from "../components/CallToActionR";
 import Application from "../components/Application";
 import { useRef } from "react";
 import Business from "../components/Business";
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from "@vercel/analytics/react"
 
 const Home: NextPage = () => {
