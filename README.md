@@ -74,6 +74,9 @@ It uses a [DIS](https://paperswithcode.com/task/dichotomous-image-segmentation) 
 ![Pipeline](https://github.com/Wenjun-Ji/DIS/assets/128712119/6f49fb9a-a24d-4fbd-85cc-0d54f2adad7c)
 
 ## Running Locally
+If you want to start your project based on our code, you can follow the steps outlined below. We would also like to introduce an excellent project🥰🥰🥰——[RestorePhoto.io](https://www.restorephotos.io/), which served as the foundation for our project.
+
+We have added many personalized components and content to better showcase our model. During this process, we encapsulated the code to aid in understanding the framework and components for personalized modifications. Our project structure diagram is as follows:
 
 ### Cloning the repository the local machine.
 
