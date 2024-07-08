@@ -34,4 +34,3 @@ const CallToActionL = ({
   };
   
   export default CallToActionL;
-  

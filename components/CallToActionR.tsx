@@ -34,4 +34,3 @@ const CallToActionR = ({
   };
   
   export default CallToActionR;
-  
