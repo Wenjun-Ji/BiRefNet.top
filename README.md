@@ -1,11 +1,11 @@
 # DIS
 
-这里我还没想好起什么名字，大概其就是DIS的体验网站
+这里我还没想好起什么名字，大概其就是DIS的体验网站(互联网+项目)
 This project ... 
 
 ## How it works
 
-It uses an DIS model called [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) on [Replicate](https://replicate.com/) to segment images with high accuracy. This application gives you the ability to upload any photo, which will send it through this ML Model using a Next.js API route, and return your restored photo.
+It uses a DIS model called [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) on [Replicate](https://replicate.com/) to segment images with high accuracy. This application gives you the ability to upload any photo, which will send it through this ML Model using a Next.js API route, and return your restored photo.
 
 
 ## Running Locally
