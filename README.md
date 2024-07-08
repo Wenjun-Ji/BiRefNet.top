@@ -9,7 +9,7 @@ On this website, you can freely experience our solution, which may be the most p
 
 ## [Demo](https://www.birefnet.top/segment):
 
-![Demo](https://github.com/Wenjun-Ji/DIS/assets/128712119/cf77b8d4-bc51-4e3a-95a6-c8d9f6b82dd3)
+![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/85b7aa58-ad94-4103-91f9-f0269d56a887)
 
 ## [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) 
 
@@ -76,7 +76,7 @@ It uses a [DIS](https://paperswithcode.com/task/dichotomous-image-segmentation) 
 ## Running Locally
 If you want to start your project based on our code, you can follow the steps outlined below. We would also like to introduce an excellent project🥰🥰🥰——[RestorePhoto.io](https://www.restorephotos.io/), which served as the foundation for our project.
 
-We have added many personalized components and content to better showcase our model. During this process, we encapsulated the code to aid in understanding the framework and components for personalized modifications. Our project structure diagram is as follows:
+We have added many personalized components and content to better showcase our model. During this process, we encapsulated the code to aid in understanding the framework and components for personalized modifications. 
 
 ### Cloning the repository the local machine.
 
