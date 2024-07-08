@@ -59,6 +59,13 @@ Our BiRefNet has achieved SOTA on many similar HR tasks:
 </details>
 <br />
 
+### BiRefNet vs Adobe Photoshop vs Adobe Express
+
+![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/65a4c23e-1687-4209-bc83-0d1762a35cdf)
+
+![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/e17a3cbd-24ce-4171-b153-8b662d6ce52e)
+
+![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/377a1a52-8038-4226-9787-725aebd2bce6)
 
 ## How it works
 
