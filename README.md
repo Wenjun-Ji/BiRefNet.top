@@ -1,7 +1,12 @@
 # DIS
 
-这里我还没想好起什么名字，大概其就是DIS的体验网站(互联网+项目)
-This project ... 
+This project is an online demonstration website for our team's solution to the topic "General Scene Intelligent High-Precision Parsing Innovative Application based on Ascend MindSpore" in the China International College Students' Innovation Competition, industry proposition track. 
+
+On this website, you can freely experience our solution, which may be the most powerful commercially available image matting model. However, it is not limited to this; it has much broader applications. For more details, please visit our website.
+
+![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/14948028-ba16-48be-9ec7-696499f8a552)
+
+![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/cf77b8d4-bc51-4e3a-95a6-c8d9f6b82dd3)
 
 ## How it works
 
