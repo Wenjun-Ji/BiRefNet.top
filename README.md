@@ -11,6 +11,55 @@ On this website, you can freely experience our solution, which may be the most p
 
 ![Demo](https://github.com/Wenjun-Ji/DIS/assets/128712119/cf77b8d4-bc51-4e3a-95a6-c8d9f6b82dd3)
 
+## [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) 
+
+[**Bilateral Reference for High-Resolution Dichotomous Image Segmentation**](https://arxiv.org/pdf/2401.03407.pdf) (___arXiv 2024___).
+
+> **Authors:**
+> [Peng Zheng](https://scholar.google.com/citations?user=TZRzWOsAAAAJ),
+> [Dehong Gao](https://scholar.google.com/citations?user=0uPb8MMAAAAJ),
+> [Deng-Ping Fan](https://scholar.google.com/citations?user=kakwJ5QAAAAJ),
+> [Li Liu](https://scholar.google.com/citations?user=9cMQrVsAAAAJ),
+> [Jorma Laaksonen](https://scholar.google.com/citations?user=qQP6WXIAAAAJ),
+> [Wanli Ouyang](https://scholar.google.com/citations?user=pw_0Z_UAAAAJ), &
+> [Nicu Sebe](https://scholar.google.com/citations?user=stFCYOAAAAAJ).
+
+[[**arXiv**](https://arxiv.org/abs/2401.03407)] [[**code**](https://github.com/ZhengPeng7/BiRefNet)] [[**stuff**](https://drive.google.com/drive/folders/1s2Xe0cjq-2ctnJBR24563yMSCOu4CcxM)]  [[**中文版**](https://drive.google.com/file/d/1aBnJ_R9lbnC2dm8dqD0-pzP2Cu-U1Xpt/view?usp=drive_link)] 
+
+Our BiRefNet has achieved SOTA on many similar HR tasks:
+
+**DIS**: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/dichotomous-image-segmentation-on-dis-te1)](https://paperswithcode.com/sota/dichotomous-image-segmentation-on-dis-te1?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/dichotomous-image-segmentation-on-dis-te2)](https://paperswithcode.com/sota/dichotomous-image-segmentation-on-dis-te2?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/dichotomous-image-segmentation-on-dis-te3)](https://paperswithcode.com/sota/dichotomous-image-segmentation-on-dis-te3?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/dichotomous-image-segmentation-on-dis-te4)](https://paperswithcode.com/sota/dichotomous-image-segmentation-on-dis-te4?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/dichotomous-image-segmentation-on-dis-vd)](https://paperswithcode.com/sota/dichotomous-image-segmentation-on-dis-vd?p=bilateral-reference-for-high-resolution)
+
+<details><summary>Figure of Comparison on Papers with Codes (by the time of this work):</summary><p>
+<img src="https://drive.google.com/thumbnail?id=1DLt6CFXdT1QSWDj_6jRkyZINXZ4vmyRp&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=1gn5GyKFlJbMIkre1JyEdHDSYcrFmcLD0&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=16CVYYOtafEeZhHqv0am2Daku1n_exMP6&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=10K45xwPXmaTG4Ex-29ss9payA9yBnyLn&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=16EuyqKFJOqwMmagvfnbC9hUurL9pYLLB&sz=w1620" />
+</details>
+<br />
+
+**COD**:[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/camouflaged-object-segmentation-on-cod)](https://paperswithcode.com/sota/camouflaged-object-segmentation-on-cod?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/camouflaged-object-segmentation-on-nc4k)](https://paperswithcode.com/sota/camouflaged-object-segmentation-on-nc4k?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/camouflaged-object-segmentation-on-camo)](https://paperswithcode.com/sota/camouflaged-object-segmentation-on-camo?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/camouflaged-object-segmentation-on-chameleon)](https://paperswithcode.com/sota/camouflaged-object-segmentation-on-chameleon?p=bilateral-reference-for-high-resolution)
+
+<details><summary>Figure of Comparison on Papers with Codes (by the time of this work):</summary><p>
+<img src="https://drive.google.com/thumbnail?id=1DLt6CFXdT1QSWDj_6jRkyZINXZ4vmyRp&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=1gn5GyKFlJbMIkre1JyEdHDSYcrFmcLD0&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=16CVYYOtafEeZhHqv0am2Daku1n_exMP6&sz=w1620" />
+</details>
+<br />
+
+**HRSOD**: [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/rgb-salient-object-detection-on-davis-s)](https://paperswithcode.com/sota/rgb-salient-object-detection-on-davis-s?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/rgb-salient-object-detection-on-hrsod)](https://paperswithcode.com/sota/rgb-salient-object-detection-on-hrsod?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/rgb-salient-object-detection-on-uhrsd)](https://paperswithcode.com/sota/rgb-salient-object-detection-on-uhrsd?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/salient-object-detection-on-duts-te)](https://paperswithcode.com/sota/salient-object-detection-on-duts-te?p=bilateral-reference-for-high-resolution) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/bilateral-reference-for-high-resolution/salient-object-detection-on-dut-omron)](https://paperswithcode.com/sota/salient-object-detection-on-dut-omron?p=bilateral-reference-for-high-resolution)
+
+<details><summary>Figure of Comparison on Papers with Codes (by the time of this work):</summary><p>
+<img src="https://drive.google.com/thumbnail?id=1hNfQtlTAHT4-AVbk_47852zyRp1NOFLs&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=1bcVldUAxYkMI3OMTyaP_jNuOugDfYj-d&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=1p1zgyVz27cGEqQMtOKzm_6zoYK3Sw_Zk&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=1TubAvcoEbH_mHu3I-AxflnB71nkf35jJ&sz=w1620" />
+<img src="https://drive.google.com/thumbnail?id=1A3V9HjVtcMQdnGPwuy-DBVhwKuo0q2lT&sz=w1620" />
+</details>
+<br />
+
+
 ## How it works
 
 It uses a [DIS](https://paperswithcode.com/task/dichotomous-image-segmentation) model called [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) on [Replicate](https://replicate.com/) to segment images with high accuracy. This application gives you the ability to upload any photo, which will send it through this DIS Model using a Next.js API route, and return your segmented photo.
