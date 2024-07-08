@@ -65,7 +65,7 @@ const SegmentHeader: React.FC = () => {
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarBrand className="flex items-center">
-          <AcmeLogo />
+          {/* <AcmeLogo /> */}
           <Link href="/" className="ml-2">
             <p className="font-bold text-black">BiRefNet</p>
           </Link>

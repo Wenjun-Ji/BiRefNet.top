@@ -74,7 +74,7 @@ const Header: React.FC = () => {
     <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarBrand className="flex items-center">
-          <AcmeLogo />
+          {/* <AcmeLogo /> */}
           <Link href="/">
             <p className="font-bold text-black ml-2">BiRefNet</p>
           </Link>
