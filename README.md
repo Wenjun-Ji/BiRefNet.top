@@ -5,18 +5,17 @@ On this website, you can freely experience our solution, which may be the most p
 
 ## [Home](https://www.birefnet.top):
 
-![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/14948028-ba16-48be-9ec7-696499f8a552)
+![Home](https://github.com/Wenjun-Ji/DIS/assets/128712119/14948028-ba16-48be-9ec7-696499f8a552)
 
 ## [Demo](https://www.birefnet.top/segment):
 
-![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/cf77b8d4-bc51-4e3a-95a6-c8d9f6b82dd3)
+![Demo](https://github.com/Wenjun-Ji/DIS/assets/128712119/cf77b8d4-bc51-4e3a-95a6-c8d9f6b82dd3)
 
 ## How it works
 
 It uses a [DIS](https://paperswithcode.com/task/dichotomous-image-segmentation) model called [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) on [Replicate](https://replicate.com/) to segment images with high accuracy. This application gives you the ability to upload any photo, which will send it through this DIS Model using a Next.js API route, and return your segmented photo.
 
-![Uploading c7429801a3856d872d7a1250f0a9442.png…]()
-
+![Pipeline](https://github.com/Wenjun-Ji/DIS/assets/128712119/6f49fb9a-a24d-4fbd-85cc-0d54f2adad7c)
 
 ## Running Locally
 
