@@ -1,7 +1,7 @@
 # DIS
 
 这里我还没想好起什么名字，大概其就是DIS的体验网站(互联网+项目)
-This project ... 
+This project is a faithful realization of DIS ... 
 
 ## How it works
 
