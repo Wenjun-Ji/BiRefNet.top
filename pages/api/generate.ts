@@ -2,7 +2,7 @@ import { Ratelimit } from "@upstash/ratelimit";
 import type { NextApiRequest, NextApiResponse } from "next";
 import requestIp from "request-ip";
 import redis from "../../utils/redis";
-
+export const maxDuration = 300;
 type Data = string;
 interface ExtendedNextApiRequest extends NextApiRequest {
   body: {
@@ -27,8 +27,8 @@ export default async function handler(
   if (ratelimit) {
     const identifier = requestIp.getClientIp(req);
     const result = await ratelimit.limit(identifier!);
-    res.setHeader("X-RateLimit-Limit", result.limit);
-    res.setHeader("X-RateLimit-Remaining", result.remaining);
+    res.setHeader("X-RateLimit-Limit", result.limit.toString());
+    res.setHeader("X-RateLimit-Remaining", result.remaining.toString());
 
     if (!result.success) {
       res
@@ -39,33 +39,44 @@ export default async function handler(
   }
 
   const imageUrl = req.body.imageUrl;
-  // POST request to Replicate to start the image restoration generation process
-  let startResponse = await fetch("https://api.replicate.com/v1/predictions", {
+  const REPLICATE_API_TOKEN = process.env.REPLICATE_API_KEY;
+  const deploymentUrl = "https://api.replicate.com/v1/deployments/men1scus/birefnet/predictions";
+
+  // POST request to start the image restoration process
+  let startResponse = await fetch(deploymentUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Token " + process.env.REPLICATE_API_KEY,
+      Authorization: `Bearer ${REPLICATE_API_TOKEN}`,
     },
     body: JSON.stringify({
-      version:
-        "9283608cc6b7be6b65a8e44983db012355fde4132009bf99d976b2f0896856a3",
-      input: { img: imageUrl, version: "v1.4", scale: 2 },
+      input: { image: imageUrl },
     }),
   });
 
   let jsonStartResponse = await startResponse.json();
-  let endpointUrl = jsonStartResponse.urls.get;
+  let predictionId = jsonStartResponse.id;
+  let endpointUrl = `https://api.replicate.com/v1/predictions/${predictionId}`;
 
   // GET request to get the status of the image restoration process & return the result when it's ready
   let restoredImage: string | null = null;
+  const startTime = Date.now();
+  const maxDuration = 300000; // 最大时间 300 秒
+
   while (!restoredImage) {
-    // Loop in 1s intervals until the alt text is ready
-    console.log("polling for result..."); 
+    if (Date.now() - startTime > maxDuration) {
+      console.error("Polling timed out.");
+      res.status(500).json("Image restoration process timed out.");
+      return;
+    }
+
+    // Loop in 1s intervals until the image is ready or timeout occurs
+    console.log("polling for result...");
     let finalResponse = await fetch(endpointUrl, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Token " + process.env.REPLICATE_API_KEY,
+        Authorization: `Bearer ${REPLICATE_API_TOKEN}`,
       },
     });
     let jsonFinalResponse = await finalResponse.json();
@@ -78,6 +89,7 @@ export default async function handler(
       await new Promise((resolve) => setTimeout(resolve, 1000));
     }
   }
+
   res
     .status(200)
     .json(restoredImage ? restoredImage : "Failed to restore image");

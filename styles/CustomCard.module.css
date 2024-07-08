@@ -1,0 +1,51 @@
+.card {
+	border: 1px solid #e0e0e0;
+	border-radius: 10px;
+	overflow: hidden;
+	width: 100%; /* 设置宽度为 100% 以占据父容器宽度 */
+	max-width: 300px; /* 设置卡片的最大宽度 */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s;
+	margin: 10px; /* 添加外间距 */
+  }
+  
+  .card:hover {
+	transform: translateY(-5px);
+  }
+  
+  .cardBody {
+	padding: 16px 0 0 0; /* 在顶部添加 padding 以留出空白 */
+	display: flex;
+	justify-content: center; /* 确保图片水平居中 */
+	align-items: center; /* 确保图片垂直居中 */
+  }
+  
+  .cardImage {
+	width: 100%; /* 设置图片宽度为 100% */
+	height: 200px; /* 设置图片高度 */
+	object-fit: cover; /* 确保图片覆盖容器 */
+  }
+  
+  .cardHeader {
+	padding: 16px;
+	background-color: white;
+	text-align: left;
+	display: flex;
+	flex-direction: column; /* 确保子元素上下排列 */
+  }
+  
+  .cardTitle {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	margin-bottom: 8px;
+	text-align: left; /* 标题左对齐 */
+  }
+  
+  .cardDescription {
+	font-size: 14px;
+	color: #666;
+	margin: 0;
+	text-align: left; /* 描述文字左对齐 */
+  }
+  

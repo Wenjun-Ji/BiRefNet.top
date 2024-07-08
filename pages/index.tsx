@@ -1,96 +1,99 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Support from "../components/Support";
+import Features from "../components/Features";
+import PictureBox from "../components/PictureBox";
+import ImageCarousel from '../components/ImageCarousel'; 
+import TextTiltAnimation from '../components/TextTiltAnimation'; 
 import CallToActionL from "../components/CallToActionL";
 import CallToActionR from "../components/CallToActionR";
-import SquigglyLines from "../components/SquigglyLines";
-import { Testimonials } from "../components/Testimonials";
+import Application from "../components/Application";
+import { useRef } from "react";
+import Business from "../components/Business";
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from "@vercel/analytics/react"
 
 const Home: NextPage = () => {
+  const leftImages = [
+    '/ImageCarousel/2.jpg',
+    '/ImageCarousel/3.jpg',
+    '/ImageCarousel/6.jpg',
+    '/ImageCarousel/7.jpg'
+  ];
+
+  const rightImages = [
+    '/ImageCarousel/8.jpg',
+    '/ImageCarousel/10.jpg',
+    '/ImageCarousel/12.jpg',
+    '/ImageCarousel/15.jpg'
+  ];
+
+  // References for each section on the page
+  const supportRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const examplesRef = useRef<HTMLDivElement>(null);
+  const applicationsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const businessRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
+    <div className="w-full flex flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>Face Photo Restorer</title>
+        <title>General Scenario Intelligent High-precision Parsing</title>
       </Head>
-
       <Header />
-      <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 sm:mt-28 mt-20">
-        <a
-          href="https://twitter.com/nutlope/status/1626074563481051136"
-          target="_blank"
-          rel="noreferrer"
-          className="border rounded-2xl py-1 px-4 text-slate-500 text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out"
-        >
-          Used by over <span className="font-semibold">200,000</span> happy
-          users
-        </a>		
-        <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-slate-900 sm:text-7xl">
-          Restoring old photos{" "}
-          <span className="relative whitespace-nowrap text-[#3290EE]">
-            <SquigglyLines />
-            <span className="relative">using AI</span>
-          </span>{" "}
-          for everyone.
-        </h1>
 
-        <p className="mx-auto mt-12 max-w-xl text-lg text-slate-700 leading-7">
-          Have old and blurry face photos? Let our AI restore them so those
-          memories can live on. 100% free – restore your photos today.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <a
-            className="bg-white rounded-xl text-black font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-gray-100 border"
-            href="https://youtu.be/FRQtFDDrUXQ"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Learn how it's built
-          </a>
+      <div className="relative-container relative" style={{top: '-40px'}}>
+        <ImageCarousel images={leftImages} direction="left" /> 
+        <ImageCarousel images={rightImages} direction="right" />
+        <TextTiltAnimation />
+      </div>
 
-          <Link
-            className="bg-black rounded-xl text-white font-medium px-4 py-3 sm:mt-10 mt-8 hover:bg-black/80"
-            href="/restore"
-          >
-            Restore your photos
-          </Link>
-        </div>
+      <div id="support" ref={supportRef} className="" style={{top: '100px'}}>
+        <Support />
+      </div>
 
-        <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
-          <div className="flex flex-col space-y-10 mt-4 mb-16">
-            <div className="flex sm:space-x-2 sm:flex-row flex-col">
-              <div>
-                <h2 className="mb-1 font-medium text-lg">Original Photo</h2>
-                <Image
-                  alt="Original photo of my bro"
-                  src="/michael.jpg"
-                  className="w-96 h-96 rounded-2xl"
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <div className="sm:mt-0 mt-8">
-                <h2 className="mb-1 font-medium text-lg">Restored Photo</h2>
-                <Image
-                  alt="Restored photo of my bro"
-                  width={400}
-                  height={400}
-                  src="/michael-new.jpg"
-                  className="w-96 h-96 rounded-2xl sm:mt-0 mt-2"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Testimonials />
+      <div id="video" ref={videoRef}> 
+        <Features /> 
+      </div>
 
-	  <CallToActionL />
-	  <CallToActionR />
-	  <CallToActionL />
+      <div id="features" ref={featuresRef} className="relative" style={{top: '-20px'}}>
+        <CallToActionR 
+          mediaSrc="/CallToAction/2_transition.mp4" 
+          title="High-precision Segmentation" 
+          content="Achieve highly accurate image segmentation with our state-of-the-art technology. Perfect for medical imaging, autonomous vehicles, and more. 📊🔍" 
+          buttonText="Learn More"
+        />
+        <CallToActionL 
+          mediaSrc="/CallToAction/5_transition.mp4" 
+          title="Camouflaged Objects" 
+          content="Effectively detect and segment camouflaged objects in various environments using our advanced algorithms. Ideal for wildlife monitoring and surveillance. 🌲🦎🔬" 
+          buttonText="Discover Now"
+        />
+        <CallToActionR 
+          mediaSrc="/CallToAction/14_16_transition.mp4" 
+          title="Industrial Detection" 
+          content="Experience robust and precise detection and segmentation for industrial applications. Ensure high efficiency and accuracy in your processes with our solutions. 🏭📈🛠️" 
+          buttonText="Explore Solutions"
+        />
+      </div>
 
+      <div id="picturebox" ref={examplesRef}>
+        <PictureBox />
+      </div>
+
+      <div id="applications" ref={applicationsRef}>
+        <Application />
+      </div>
+      
+      <div id="business" ref={businessRef}>
+        <Business />
+      </div>
+      <Analytics />
+      <SpeedInsights />
       <Footer />
     </div>
   );

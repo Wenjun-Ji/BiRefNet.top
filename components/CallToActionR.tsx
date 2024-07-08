@@ -1,34 +1,36 @@
-// components/CallToActionR.js
-import Image from 'next/image';
-
-const CallToActionR = () => {
-  return (
-    <div className="flex flex-col md:flex-row items-center justify-between bg-white p-8 rounded-lg shadow-md">
-      <div className="mt-8 md:mt-0 md:w-1/2">
-        <Image
-          src="/og-image.png"  
-          alt="AI Generated Backgrounds"
-          width={500}
-          height={300}
-          className="rounded-lg"
-        />
-      </div>
-      <div className="text-center md:text-left md:w-1/2 md:pl-8">
-        <h2 className="text-3xl font-bold text-gray-900">
-          使用AI即时创建背景
-        </h2>
-        <p className="text-lg text-gray-700 mt-4">
-          Photoroom利用AI的力量在几秒钟内为您的产品图片创建逼真、具有工作室质量的背景。或者试试我们的文本到图像工具，从你的想象力提示中即时生成视觉效果。
-        </p>
-        <a
-          href="#"
-          className="inline-block mt-6 px-6 py-3 bg-black text-white text-lg font-medium rounded hover:bg-gray-800 transition duration-300"
-        >
-          探索AI背景
-        </a>
-      </div>
-    </div>
-  );
-};
-
-export default CallToActionR;
+const CallToActionR = ({ 
+	mediaSrc = '/CallToAction/2_transition.mp4', // 修改为视频文件的默认路径
+	title = 'Erase any background', 
+	content = 'Edit photos quickly and accurately without any effort. Photoroom simplifies your image, maintaining focus on the foreground and is twice as accurate as other apps.', 
+	buttonText = 'Explore background removal' 
+  }) => { 
+	return (
+	  <div className="flex flex-col md:flex-row-reverse items-center justify-between bg-white p-8">
+		<div className="text-center md:text-left md:w-1/2 md:pl-16">
+		  <h2 className="text-4xl font-bold text-gray-900 max-w-[500px] mx-auto">
+			{title}
+		  </h2>
+		  <p className="text-base text-gray-700 mt-4 max-w-[500px] mx-auto">
+			{content}
+		  </p>
+		  <a
+			href="#"
+			className="inline-block mt-6 px-6 py-3 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-700 transition duration-300"
+		  >
+			{buttonText}
+		  </a>
+		</div>
+		<div className="md:mt-0 md:w-1/2">
+		  <video 
+			src={mediaSrc}  
+			width={520}
+			height={310}
+			className="rounded-3xl"
+			controls
+		  />
+		</div>
+	  </div>
+	);
+  };
+  
+  export default CallToActionR;
