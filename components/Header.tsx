@@ -71,7 +71,9 @@ const Header: React.FC = () => {
   }, [handleIntersection, menuItems]);
 
   return (
-    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+  <>
+    <div className="header-placeholder"></div>
+    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} className="fixed-header">
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarBrand className="flex items-center">
           <AcmeLogo />
@@ -82,7 +84,7 @@ const Header: React.FC = () => {
         <Link
           href="/segment"
           className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out ml-4"
-        >
+          >
           Start
         </Link>
       </NavbarContent>
@@ -147,6 +149,7 @@ const Header: React.FC = () => {
         ))}
       </NavbarMenu>
     </Navbar>
+  </>
   );
 };
 

@@ -25,6 +25,20 @@ html, body {
   pointer-events: none;
 }
 
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white; /* 背景颜色可以根据需要调整 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+.header-placeholder {
+  height: 60px; /* 与 Header 的高度相同 */
+}
+
 @media (max-width: 768px) {
   .relative-container {
     padding: 0 10px;
