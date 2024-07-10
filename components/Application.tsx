@@ -71,13 +71,14 @@ const Application: React.FC = () => {
 		"type": "heavy"
 	},
 	  
-    {
-      imageSrc: '/CustomCard/1.gif',
-      imageAlt: 'Robotic Surgery',
-      title: 'Robotic Surgery',
-      description: 'Highly precise robotic surgery powered by AI for improved outcomes.',
-      type: 'heavy',
-    },
+	{
+		"imageSrc": "/CustomCard/industry.png",
+		"imageAlt": "Industrial Quality Control",
+		"title": "Industrial Quality Control",
+		"description": "AI-driven quality control helps identify defects and improve manufacturing processes. Example in light industry. Source: [Appl. Sci. 2021, 11(16), 7657]",
+		"type": "heavy"
+	}
+	
   ]);
 
   const lightCards = cards.filter(card => card.type === 'light');
