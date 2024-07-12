@@ -67,6 +67,7 @@ Our BiRefNet has achieved SOTA on many similar HR tasks:
 
 ![image](https://github.com/Wenjun-Ji/DIS/assets/128712119/377a1a52-8038-4226-9787-725aebd2bce6)
 
+
 ## How it works
 
 It uses a [DIS](https://paperswithcode.com/task/dichotomous-image-segmentation) model called [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) on [Replicate](https://replicate.com/) to segment images with high accuracy. This application gives you the ability to upload any photo, which will send it through this DIS Model using a Next.js API route, and return your segmented photo.
