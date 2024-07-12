@@ -62,7 +62,9 @@ const SegmentHeader: React.FC = () => {
   }, [handleIntersection, menuItems]);
 
   return (
-    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+  <>
+    <div className="header-placeholder"></div>
+    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} className="fixed-header">
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarBrand className="flex items-center">
           <AcmeLogo />
@@ -74,7 +76,7 @@ const SegmentHeader: React.FC = () => {
           <Link
             href="/segment"
             className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap"
-          >
+            >
             Contact us
           </Link>
           <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="ml-4"/>
@@ -99,7 +101,7 @@ const SegmentHeader: React.FC = () => {
                 className={`font-bold px-3 py-2 rounded-md hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out ${
                   activeLink === item.label ? "text-warning" : ""
                 }`}
-              >
+                >
                 {item.label}
               </Link>
             </NavbarItem>
@@ -110,7 +112,7 @@ const SegmentHeader: React.FC = () => {
             <Link
               href="/segment"
               className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
-            >
+              >
               Contact us
             </Link>
           </NavbarItem>
@@ -124,20 +126,21 @@ const SegmentHeader: React.FC = () => {
               className="w-full"
               color={
                 index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
+                ? "warning"
+                : index === menuItems.length - 1
+                ? "danger"
+                : "foreground"
               }
               href={item.href}
               size="lg"
-            >
+              >
               {item.label}
             </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
     </Navbar>
+  </>
   );
 };
 

@@ -17,7 +17,7 @@ const CustomCard: React.FC<CustomCardProps> = ({ imageSrc, imageAlt, title, desc
           alt={imageAlt}
           className={`${styles.cardImage}`}
           src={imageSrc}
-          width="100%"
+          width="95%"
           height="auto"
         />
       </CardBody>

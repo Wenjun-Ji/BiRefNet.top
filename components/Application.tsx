@@ -36,14 +36,14 @@ const Application: React.FC = () => {
     {
       imageSrc: '/CustomCard/motor-demo.gif',
       imageAlt: 'AR application based on Images',
-      title: 'AR application based on Images',
+      title: 'AR application on Images',
       description: '',
       type: 'light',
     },
     {
       imageSrc: '/CustomCard/motor-video.gif',
       imageAlt: 'AR application based on videos',
-      title: 'AR application based on videos',
+      title: 'AR application on videos',
       description: '',
       type: 'light',
     },
@@ -55,27 +55,30 @@ const Application: React.FC = () => {
       type: 'light',
     },
     // 重型应用
-    {
-      imageSrc: '/CustomCard/2.gif',
-      imageAlt: 'Industrial Inspection',
-      title: 'Industrial Inspection',
-      description: 'AI-powered industrial inspection to ensure safety and quality in manufacturing.',
-      type: 'heavy',
-    },
-    {
-      imageSrc: '/CustomCard/3.gif',
-      imageAlt: 'Precision Agriculture',
-      title: 'Precision Agriculture',
-      description: 'AI technology for monitoring and optimizing agricultural processes.',
-      type: 'heavy',
-    },
-    {
-      imageSrc: '/CustomCard/1.gif',
-      imageAlt: 'Robotic Surgery',
-      title: 'Robotic Surgery',
-      description: 'Highly precise robotic surgery powered by AI for improved outcomes.',
-      type: 'heavy',
-    },
+	{
+		imageSrc: '/CustomCard/agriculture.png',
+		imageAlt: "Precision Agriculture",
+		title: "Precision Agriculture",
+		description: "This technology helps monitor crop health, detect pests and diseases, estimate yields, and optimize resources.  Source: [NWRD] ",
+		type: "heavy"
+	},
+	  
+	{
+		"imageSrc": "/CustomCard/medicine.png",
+		"imageAlt": "Medical Image Segmentation",
+		"title": "Medical Image Segmentation",
+		"description": "This technology aids in disease diagnosis, and treatment planning. red boxes highlight detected results. Source: [Lung-PET-CT-Dxe]",
+		"type": "heavy"
+	},
+	  
+	{
+		"imageSrc": "/CustomCard/industry.png",
+		"imageAlt": "Industrial Quality Control",
+		"title": "Industrial Quality Control",
+		"description": "AI-driven quality control helps identify defects and improve manufacturing processes. Example in light industry. Source: [Appl. Sci. 2021, 11(16), 7657]",
+		"type": "heavy"
+	}
+	
   ]);
 
   const lightCards = cards.filter(card => card.type === 'light');
@@ -96,6 +99,7 @@ const Application: React.FC = () => {
         ))}
       </div>
       <h3 className="text-5xl font-semibold mb-4 text-center mt-8">Heavy Applications</h3>
+	  <p className="text-1xl font-semibold mb-4 text-center">Striving to achieve</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {heavyCards.map((card, index) => (
           <CustomCard
