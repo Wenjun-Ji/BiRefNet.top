@@ -74,7 +74,7 @@ const SegmentHeader: React.FC = () => {
         </NavbarBrand>
         <div className="ml-auto flex items-center">
           <Link
-            href="/segment"
+            href="#footer"
             className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap"
             >
             Contact us
@@ -109,12 +109,10 @@ const SegmentHeader: React.FC = () => {
         </div>
         <div className="flex items-center">
           <NavbarItem className="ml-4">
-            <Link
-              href="/segment"
-              className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
-              >
-              Contact us
-            </Link>
+          <a href="#footer" className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out whitespace-nowrap">
+  Contact us
+</a>
+
           </NavbarItem>
         </div>
       </NavbarContent>

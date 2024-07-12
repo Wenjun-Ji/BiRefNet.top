@@ -9,7 +9,7 @@ export default function Features() {
             Discover our latest Model features
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-slate-700 leading-7">
-            See what our 200,000+ users are saying about the product.
+           
           </p>
         </div>
       </div>
@@ -19,7 +19,7 @@ export default function Features() {
           <video
             src="/feature.mp4"
             className="h-full w-full outline-none"
-            poster="https://storyblok-cdn.photoroom.com/f/191576/1920x1080/026d9ff4f0/video-feature-release-poster.webp"
+            poster=""
             playsInline
             draggable={true}
             controls={true}

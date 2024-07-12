@@ -25,7 +25,8 @@ const Restore: NextPage = () => {
         <Contrast />
       </div>
 
-      <Footer />
+      <Footer/>
+
     </div>
   );
 };
