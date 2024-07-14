@@ -16,6 +16,7 @@
     "@swc/helpers": "^0.5.11",
     "@swc/jest": "^0.2.36",
     "@tensorflow/tfjs": "^3.21.0",
+    "@types/react-color": "^3.0.12",
     "@upstash/ratelimit": "^0.3.8",
     "@upstash/redis": "^1.19.1",
     "@vercel/analytics": "^0.1.11",
