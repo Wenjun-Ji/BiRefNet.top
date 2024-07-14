@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import CountUp from "react-countup";
+import { SketchPicker } from "react-color";
 import { UploadDropzone } from "react-uploader";
 import { Uploader } from "uploader";
 import { CompareSlider } from "./CompareSlider";
@@ -47,6 +47,8 @@ const Demo = () => {
   const [sideBySide, setSideBySide] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [photoName, setPhotoName] = useState<string | null>(null);
+  const [backgroundColor, setBackgroundColor] = useState<string>("black");
+  const [colorPickerVisible, setColorPickerVisible] = useState<boolean>(false);
 
   const sampleImages = [
     "/Demo/fox.jpg",
@@ -104,6 +106,18 @@ const Demo = () => {
     setPhotoName(sampleUrl.split('/').pop() || "sample"); // Extract file name from URL or use 'sample'
   };
 
+  const handleColorChange = (color: any) => {
+    setBackgroundColor(color.hex);
+  };
+
+  const backgroundColors = [
+    "transparent",
+    "white",
+    "black",
+    "beige",
+    "lightblue"
+  ];
+
   return (
     <div className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5">
@@ -112,7 +126,7 @@ const Demo = () => {
         Any Photo
       </h1>
       <p className="text-slate-500">
-	  Upload your image or try a sample
+        Upload your image or try a sample
       </p>
       <AnimatePresence mode="wait">
         <motion.div className="flex justify-between items-center w-full flex-col mt-4">
@@ -159,6 +173,7 @@ const Demo = () => {
             <CompareSlider
               original={originalPhoto!}
               segmented={segmentedImage!}
+              backgroundColor={backgroundColor}
             />
           )}
           {segmentedImage && originalPhoto && !sideBySide && (
@@ -183,6 +198,7 @@ const Demo = () => {
                     width={475}
                     height={475}
                     onLoadingComplete={() => setsegmentedLoaded(true)}
+                    style={{ backgroundColor: backgroundColor }}
                   />
                 </a>
               </div>
@@ -206,6 +222,40 @@ const Demo = () => {
               <span className="block sm:inline">{error}</span>
             </div>
           )}
+          {segmentedImage && (
+            <div className="flex space-x-4 mt-4 relative">
+              {backgroundColors.map((color, index) => (
+                <div
+                  key={index}
+                  onClick={() => setBackgroundColor(color)}
+                  className="w-8 h-8 rounded-full cursor-pointer"
+                  style={{
+                    backgroundColor: color === "transparent" ? "white" : color,
+                    border: "1px solid grey",
+                    backgroundImage: color === "transparent" ? "url('/Demo/button/transparent.png')" : "none",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center"
+                  }}
+                />
+              ))}
+              <div
+                onClick={() => setColorPickerVisible(!colorPickerVisible)}
+                className="w-8 h-8 rounded-full cursor-pointer"
+                style={{
+                  background: "url('/Demo/button/color-wheel.png') no-repeat center/cover",
+                  border: "none"
+                }}
+              />
+              {colorPickerVisible && (
+                <div className="absolute mt-2 z-10" style={{ top: '50px', left: '50%', transform: 'translateX(-50%)' }}>
+                  <SketchPicker color={backgroundColor} onChange={handleColorChange} />
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-b-white border-l-transparent border-r-transparent" />
+                </div>
+              )}
+            </div>
+          )}
+
+
           <div className="flex space-x-2 justify-center">
             {originalPhoto && !loading && (
               <button
@@ -215,6 +265,7 @@ const Demo = () => {
                   setsegmentedLoaded(false);
                   setSideBySide(false);
                   setError(null);
+                  setBackgroundColor("black");
                 }}
                 className="bg-black rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-black/80 transition"
               >
@@ -225,7 +276,7 @@ const Demo = () => {
               <button
                 onClick={() => {
                   if (photoName) {
-                    downloadPhoto(segmentedImage!, appendNewToName(photoName));
+                    downloadPhoto(segmentedImage!, appendNewToName(photoName), backgroundColor);
                   }
                 }}
                 className="bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition"

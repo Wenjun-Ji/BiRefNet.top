@@ -14,6 +14,7 @@ import { AcmeLogo } from "../components/AcmeLogo";
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(""); // State to track active link
+  const [isScrolled, setIsScrolled] = useState(false); // State to track scroll
 
   // References for each section on the page
   const supportRef = useRef<HTMLDivElement>(null);
@@ -70,86 +71,108 @@ const Header: React.FC = () => {
     };
   }, [handleIntersection, menuItems]);
 
-  return (
-  <>
-    <div className="header-placeholder"></div>
-    <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} className="fixed-header">
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarBrand className="flex items-center">
-          <AcmeLogo />
-          <Link href="/">
-            <p className="font-bold text-black ml-2">BiRefNet</p>
-          </Link>
-        </NavbarBrand>
-        <Link
-          href="/segment"
-          className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out ml-4"
-          >
-          Start
-        </Link>
-      </NavbarContent>
-      <NavbarContent className="sm:hidden" justify="end">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-      </NavbarContent>
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
 
-      <NavbarContent className="hidden sm:flex justify-between w-full">
-        <div className="flex items-center">
-          <NavbarBrand>
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <>
+      <div className="header-placeholder"></div>
+      <Navbar
+        isBordered
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        className={`fixed-header ${isScrolled ? "scrolled" : ""}`}
+      >
+        <NavbarContent className="sm:hidden" justify="start">
+          <NavbarBrand className="flex items-center">
             <AcmeLogo />
             <Link href="/">
-              <p className="font-bold text-black">BiRefNet</p>
+              <p className="font-bold text-black ml-2">BiRefNet</p>
             </Link>
           </NavbarBrand>
-        </div>
-        <div className="flex items-center">
-          <NavbarItem className="ml-4">
-            <Link
-              href="/segment"
-              className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
-            >
-              Start
-            </Link>
-          </NavbarItem>
-        </div>
-        <div className="flex items-center justify-center flex-grow gap-4">
-          {menuItems.map((item, index) => (
-            <NavbarItem key={`${item.label}-${index}`}>
+          <Link
+            href="/segment"
+            className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out ml-4"
+          >
+            Start
+          </Link>
+        </NavbarContent>
+        <NavbarContent className="sm:hidden" justify="end">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          />
+        </NavbarContent>
+
+        <NavbarContent className="hidden sm:flex justify-between w-full">
+          <div className="flex items-center">
+            <NavbarBrand>
+              <AcmeLogo />
+              <Link href="/">
+                <p className="font-bold text-black">BiRefNet</p>
+              </Link>
+            </NavbarBrand>
+          </div>
+          <div className="flex items-center">
+            <NavbarItem className="ml-4">
               <Link
-                color="foreground"
+                href="/segment"
+                className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-5 py-1.5 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out"
+              >
+                Start
+              </Link>
+            </NavbarItem>
+          </div>
+          <div className="flex items-center justify-center flex-grow gap-4">
+            {menuItems.map((item, index) => (
+              <NavbarItem key={`${item.label}-${index}`}>
+                <Link
+                  color="foreground"
+                  href={item.href}
+                  className={`font-bold px-3 py-2 rounded-md hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out ${
+                    activeLink === item.label ? "text-warning" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              </NavbarItem>
+            ))}
+          </div>
+        </NavbarContent>
+
+        <NavbarMenu>
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item.label}-${index}`}>
+              <Link
+                className="w-full"
+                color={
+                  index === 2
+                    ? "warning"
+                    : index === menuItems.length - 1
+                    ? "danger"
+                    : "foreground"
+                }
                 href={item.href}
-                className={`font-bold px-3 py-2 rounded-md hover:bg-black hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out ${
-                  activeLink === item.label ? "text-warning" : ""
-                }`}
+                size="lg"
               >
                 {item.label}
               </Link>
-            </NavbarItem>
+            </NavbarMenuItem>
           ))}
-        </div>
-      </NavbarContent>
-
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.label}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href={item.href}
-              size="lg"
-            >
-              {item.label}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
-  </>
+        </NavbarMenu>
+      </Navbar>
+    </>
   );
 };
 
