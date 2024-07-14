@@ -49,3 +49,14 @@ html, body {
     padding: 0 10px;
   }
 }
+.color-picker-connector {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white; /* Color of the connector */
+  position: absolute;
+  bottom: -8px; /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
