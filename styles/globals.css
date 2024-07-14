@@ -33,6 +33,11 @@ html, body {
   z-index: 1000;
   background-color: white; /* 背景颜色可以根据需要调整 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.fixed-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.8); /* 背景变为半透明 */
 }
 
 .header-placeholder {
