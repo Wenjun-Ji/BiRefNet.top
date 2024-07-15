@@ -7,7 +7,7 @@ export default function Support() {
 			  Title:
 			  <a href="https://arxiv.org/pdf/2401.03407.pdf" target="_blank" rel="noopener noreferrer" className="text-black-500 hover:underline">
 				Bilateral Reference for High-Resolution Dichotomous Image Segmentation
-			  </a> (arXiv 2024).
+			  </a> (CAAI AIR 2024).
 			</p>
   
 			<p className="mb-2 text-2xl">
