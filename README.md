@@ -13,7 +13,7 @@ On this website, you can freely experience our solution, which may be the most p
 
 ## [BiRefNet](https://github.com/ZhengPeng7/BiRefNet) 
 
-[**Bilateral Reference for High-Resolution Dichotomous Image Segmentation**](https://arxiv.org/pdf/2401.03407.pdf) (___arXiv 2024___).
+[**Bilateral Reference for High-Resolution Dichotomous Image Segmentation**](https://arxiv.org/pdf/2401.03407.pdf) (___CAAI AIR 2024___).
 
 > **Authors:**
 > [Peng Zheng](https://scholar.google.com/citations?user=TZRzWOsAAAAJ),
