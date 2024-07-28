@@ -71,8 +71,8 @@ const Demo = () => {
       onUpdate={(file) => {
         if (file.length !== 0) {
           setPhotoName(file[0].originalFile.originalFileName);
-          setOriginalPhoto(file[0].fileUrl.replace("raw", "thumbnail"));
-          generatePhoto(file[0].fileUrl.replace("raw", "thumbnail"));
+          setOriginalPhoto(file[0].fileUrl);
+          generatePhoto(file[0].fileUrl);
         }
       }}
       width="670px"
