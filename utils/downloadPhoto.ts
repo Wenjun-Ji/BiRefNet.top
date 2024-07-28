@@ -9,6 +9,7 @@ function forceDownload(blobUrl: string, filename: string) {
 
 export default async function downloadPhoto(url: string, filename: string, backgroundColor: string) {
   const image = new Image();
+  image.crossOrigin = 'anonymous'; // 设置crossOrigin属性
   image.src = url;
 
   image.onload = () => {
@@ -33,7 +34,7 @@ export default async function downloadPhoto(url: string, filename: string, backg
         const blobUrl = URL.createObjectURL(blob);
         forceDownload(blobUrl, filename);
       }
-    });
+    }, 'image/png'); // 指定blob的MIME类型
   };
 
   image.onerror = (error) => {
