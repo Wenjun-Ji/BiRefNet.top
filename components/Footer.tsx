@@ -5,7 +5,7 @@ export default function Footer() {
     <footer id= "footer" className="text-center h-24 sm:h-28 w-full sm:pt-2 pt-4 border-t mt-5 flex sm:flex-row flex-col justify-between items-center px-3 space-y-3 sm:mb-0 mb-3">
       <div className="text-sm sm:text-base">
         <a href="mailto:zhengpeng0108@gmail.com" className="font-bold transition hover:text-black/50">
-          FEEL FREE TO CONTACT US: zhengpeng0108@gmail.com
+          FEEL FREE TO CONTACT US: fdp@nankai.edu.cn
         </a>
       </div>
 
