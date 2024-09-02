@@ -40,7 +40,7 @@ export default async function handler(
 
   const imageUrl = req.body.imageUrl;
   const REPLICATE_API_TOKEN = process.env.REPLICATE_API_KEY;
-  const deploymentUrl = "https://api.replicate.com/v1/deployments/men1scus/birefnet/predictions";
+  const deploymentUrl = "https://api.replicate.com/v1/deployments/birefnet/birefnet/predictions";
 
   // POST request to start the image restoration process
   let startResponse = await fetch(deploymentUrl, {
