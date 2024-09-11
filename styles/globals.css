@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.relative-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.relative-container > .textTiltAnimation {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white; /* 背景颜色可以根据需要调整 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+  transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.fixed-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.8); /* 背景变为半透明 */
+}
+
+.header-placeholder {
+  height: 60px; /* 与 Header 的高度相同 */
+}
+
+@media (max-width: 768px) {
+  .relative-container {
+    padding: 0 10px;
+  }
+}
+.color-picker-connector {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white; /* Color of the connector */
+  position: absolute;
+  bottom: -8px; /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}

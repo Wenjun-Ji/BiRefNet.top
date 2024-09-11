@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.textContainer {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: center;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.text {
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  display: inline-block;
+  /* 使用clamp函数动态设置字体大小 */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.char {
+  display: inline-block;
+}
+
+
+/* 使用媒体查询进一步调整小屏幕下的字体大小 */
+@media (max-width: 576px) {
+  .text {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 400px) {
+  .text {
+    font-size: clamp(1rem, 5vw, 2rem);
+  }
+}
+
+
